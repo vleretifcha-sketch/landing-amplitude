@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit/Outfit-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Outfit", system-ui, sans-serif;
+
+  --color-bg: #000000;
+  --color-card: #111111;
+  --color-card-hover: #161616;
+  --color-border: #222222;
+  --color-border-light: #2a2a2a;
+  --color-text: #ffffff;
+  --color-muted: #888888;
+  --color-muted-light: #a3a3a3;
+  --color-gold: #d4af37;
+  --color-gold-light: #e8c96a;
+  --color-gold-dark: #a68b2a;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-bg font-sans text-text antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes reveal-up-blur {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes reveal-down {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-reveal-up-blur {
+    animation: reveal-up-blur 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-reveal-down {
+    animation: reveal-down 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gold-gradient {
+    background-image: linear-gradient(
+      to top,
+      #1f1808 0%,
+      #5c4712 22%,
+      #a68b2a 45%,
+      #e8c96a 68%,
+      #fff3cc 88%,
+      #fffef5 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-pill {
+    @apply rounded-[12px] border border-white/10 bg-white/[0.06] backdrop-blur-xl;
+  }
+
+  .card-dark {
+    @apply rounded-3xl border border-border bg-card;
+  }
+
+  .label-accent {
+    @apply text-xs font-medium tracking-[0.2em] text-gold uppercase;
+  }
+
+  .btn-primary {
+    @apply inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-gold px-6 text-sm font-semibold text-black transition-all duration-200 hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-[12px] border border-border-light bg-card px-6 text-sm font-medium text-text transition-colors duration-200 hover:bg-card-hover;
+  }
+
+  .btn-white {
+    @apply inline-flex h-12 cursor-pointer items-center justify-center rounded-[12px] bg-white px-5 text-sm font-semibold text-black transition-opacity duration-200 hover:opacity-90;
+  }
+
+  .glass-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md;
+  }
+}
