@@ -1,3 +1,6 @@
+import { Reveal } from "./Reveal";
+import { RevealGroup } from "./RevealGroup";
+
 const steps = [
   {
     num: 1,
@@ -20,14 +23,16 @@ export function Process() {
   return (
     <section id="process" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <p className="label-accent">Processus</p>
-        <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-          Comment ça marche
-        </h2>
+        <Reveal>
+          <p className="label-accent">Processus</p>
+          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+            Comment ça marche
+          </h2>
+        </Reveal>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <RevealGroup className="mt-14 grid gap-5 md:grid-cols-3" stagger={300}>
           {steps.map((step) => (
-            <article key={step.num} className="card-dark p-6 sm:p-8">
+            <article key={step.num} className="card-dark h-full p-6 sm:p-8">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-bold text-black">
                 {step.num}
               </div>
@@ -37,7 +42,7 @@ export function Process() {
               </p>
             </article>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

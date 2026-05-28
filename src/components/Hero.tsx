@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type RefObject } from "react";
-
-const logos = ["Fitness", "Pilates", "Mobilité", "Stretch", "Training", "Wellness"];
+import { SocialProof } from "./SocialProof";
 
 type HeroParallax = {
   opacity: number;
@@ -117,18 +116,23 @@ function HeroPhoneDesktop({
           : "right-0 translate-x-[8%] rotate-[12deg] xl:right-2"
       }`}
     >
-      <div
-        className={`animate-reveal-up-blur relative ${isLeft ? "[animation-delay:2600ms]" : "[animation-delay:2850ms]"}`}
-        style={phoneScrollStyle(progress)}
-      >
-        <img
-          src="/images/phone-mockup.png"
-          alt=""
-          className={`block w-[400px] max-w-none select-none xl:w-[480px] ${
-            isLeft ? "" : "scale-x-[-1]"
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg from-25% via-bg/70 via-55% to-transparent" />
+      <div className="relative" style={phoneScrollStyle(progress)}>
+        <div
+          className={`animate-reveal-up-blur relative ${isLeft ? "[animation-delay:2600ms]" : "[animation-delay:2850ms]"}`}
+        >
+          <div
+            className={`relative ${isLeft ? "animate-phone-float [animation-delay:3.2s]" : "animate-phone-float-slow [animation-delay:3.6s]"}`}
+          >
+            <img
+              src="/images/phone-mockup.png"
+              alt=""
+              className={`block w-[480px] max-w-none select-none xl:w-[560px] ${
+                isLeft ? "" : "scale-x-[-1]"
+              }`}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg from-25% via-bg/70 via-55% to-transparent" />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -140,16 +144,17 @@ function HeroPhoneMobile({ progress }: { progress: number }) {
       aria-hidden
       className="pointer-events-none relative z-0 flex w-full justify-center lg:hidden"
     >
-      <div
-        className="animate-reveal-up-blur relative -mb-20 [animation-delay:2450ms] sm:-mb-24"
-        style={phoneScrollStyle(progress)}
-      >
-        <img
-          src="/images/phone-mockup.png"
-          alt=""
-          className="block w-[min(82vw,320px)] max-w-none select-none sm:w-[340px]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg from-20% via-bg/70 via-50% to-transparent" />
+      <div className="relative" style={phoneScrollStyle(progress)}>
+        <div className="animate-reveal-up-blur relative -mb-20 [animation-delay:2450ms] sm:-mb-24">
+          <div className="animate-phone-float relative [animation-delay:3s]">
+            <img
+              src="/images/phone-mockup.png"
+              alt=""
+              className="block w-[min(92vw,380px)] max-w-none select-none sm:w-[420px]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg from-20% via-bg/70 via-50% to-transparent" />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -172,6 +177,10 @@ export function Hero() {
 
             <div className="relative z-10 flex flex-1 flex-col lg:items-center lg:justify-center">
               <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+                <span className="animate-reveal-up-blur mb-5 inline-flex items-center rounded-full border border-gold/35 bg-gold/10 px-3.5 py-1 text-xs font-medium tracking-wide text-gold [animation-delay:350ms]">
+                  Nouveauté
+                </span>
+
                 <h1 className="text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
                   <span className="animate-reveal-up-blur block [animation-delay:550ms]">
                     La souplesse
@@ -187,7 +196,7 @@ export function Hero() {
                   normale.
                 </p>
 
-                <div className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center">
+                <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:justify-center">
                   <a
                     href="#services"
                     className="btn-primary animate-reveal-up-blur w-full [animation-delay:1650ms] sm:w-auto"
@@ -201,27 +210,15 @@ export function Hero() {
                     En savoir plus
                   </a>
                 </div>
+
+                <div className="animate-reveal-up-blur mt-8 [animation-delay:2350ms] sm:mt-10">
+                  <SocialProof />
+                </div>
               </div>
 
               <div className="mt-8 flex justify-center sm:mt-10 lg:hidden">
                 <HeroPhoneMobile progress={progress} />
               </div>
-            </div>
-          </div>
-
-          <div className="relative z-10 mt-auto border-t border-border pt-8 pb-6 lg:pt-10 lg:pb-8">
-            <p className="text-center text-sm text-muted">
-              Une approche adoptée par celles et ceux qui s&apos;entraînent déjà
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-50 lg:mt-8">
-              {logos.map((name) => (
-                <span
-                  key={name}
-                  className="text-sm font-medium tracking-wide text-muted-light"
-                >
-                  {name}
-                </span>
-              ))}
             </div>
           </div>
         </div>

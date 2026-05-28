@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Reveal } from "./Reveal";
 
 const VIDEO_SRC = "/videos/amplitude.mp4";
 const PLACEHOLDER_SRC = "/images/video-placeholder.png";
@@ -33,7 +34,8 @@ export function VideoSection() {
       className="px-4 pt-6 pb-16 sm:px-6 sm:pt-8 sm:pb-20 lg:px-8 lg:pt-10 lg:pb-28"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-[0_0_80px_-20px_rgba(212,175,55,0.15)]">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-[0_0_80px_-20px_rgba(212,175,55,0.15)]">
           <div className="relative aspect-video w-full">
             <img
               src={PLACEHOLDER_SRC}
@@ -62,7 +64,8 @@ export function VideoSection() {
               aria-hidden
             />
           </div>
-        </div>
+          </div>
+        </Reveal>
         <p className="sr-only">
           Vidéo de présentation de la méthode Amplitude. Placez le fichier MP4
           dans public/videos/amplitude.mp4.

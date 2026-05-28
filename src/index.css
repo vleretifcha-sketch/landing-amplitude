@@ -146,6 +146,16 @@
   }
 }
 
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+}
+
 @layer utilities {
   .animate-reveal-up-blur {
     animation: reveal-up-blur 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -153,6 +163,14 @@
 
   .animate-reveal-down {
     animation: reveal-down 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-phone-float {
+    animation: phone-float 5s ease-in-out infinite;
+  }
+
+  .animate-phone-float-slow {
+    animation: phone-float 6.5s ease-in-out infinite;
   }
 
   .text-balance {

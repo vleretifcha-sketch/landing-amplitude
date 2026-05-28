@@ -5,6 +5,7 @@ import { Process } from "./components/Process";
 import { Services } from "./components/Services";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
+import { ScrollProgress } from "./components/ScrollProgress";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         </div>
       </main>
       <Footer />
+      <ScrollProgress />
     </div>
   );
 }
