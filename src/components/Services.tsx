@@ -92,7 +92,7 @@ export function Services() {
 
           <article className="card-dark grid overflow-hidden lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 sm:p-10">
-              <p className="label-accent">Semaine type</p>
+              <p className="text-sm lowercase text-muted-light">semaine type</p>
               <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
                 3 séances maximum. 20–30 minutes.
               </h3>

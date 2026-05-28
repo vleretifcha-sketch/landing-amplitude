@@ -201,7 +201,7 @@
   }
 
   .label-accent {
-    @apply text-xs font-medium tracking-[0.2em] text-gold uppercase;
+    @apply inline-flex items-center rounded-full border border-gold/35 bg-gold/10 px-3.5 py-1 text-xs font-medium tracking-wide text-gold;
   }
 
   .btn-primary {

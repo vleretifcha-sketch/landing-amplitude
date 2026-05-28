@@ -177,7 +177,7 @@ export function Hero() {
 
             <div className="relative z-10 flex flex-1 flex-col lg:items-center lg:justify-center">
               <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-                <span className="animate-reveal-up-blur mb-5 inline-flex items-center rounded-full border border-gold/35 bg-gold/10 px-3.5 py-1 text-xs font-medium tracking-wide text-gold [animation-delay:350ms]">
+                <span className="label-accent animate-reveal-up-blur mb-5 [animation-delay:350ms]">
                   Nouveauté
                 </span>
 
