@@ -46,7 +46,7 @@ export function Services() {
             <div className="mt-6 flex flex-1 flex-col">
               <h3 className="text-xl font-semibold">Cours signature</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-light">
-                Séance guidée en vidéo de 20 à 30 minutes axée sur un coaching précis, la
+                Séance guidée en vidéo de 30 minutes axées sur un coaching précis, la
                 respiration et l&apos;alignement. C&apos;est la séance principale du mois.
               </p>
             </div>
