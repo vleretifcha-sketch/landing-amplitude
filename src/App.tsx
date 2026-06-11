@@ -3,13 +3,17 @@ import { Hero } from "./components/Hero";
 import { VideoSection } from "./components/VideoSection";
 import { Process } from "./components/Process";
 import { Services } from "./components/Services";
+import { Pricing } from "./components/Pricing";
 import { FAQ } from "./components/FAQ";
 import { Footer } from "./components/Footer";
 import { ScrollProgress } from "./components/ScrollProgress";
+import { LoadingScreen } from "./components/LoadingScreen";
 
 export default function App() {
   return (
-    <div className="relative min-h-dvh overflow-x-hidden bg-bg">
+    <>
+      <LoadingScreen />
+      <div className="relative min-h-dvh overflow-x-hidden bg-bg">
       <Header />
       <main className="relative">
         <Hero />
@@ -17,11 +21,13 @@ export default function App() {
           <VideoSection />
           <Process />
           <Services />
+          <Pricing />
           <FAQ />
         </div>
       </main>
       <Footer />
       <ScrollProgress />
-    </div>
+      </div>
+    </>
   );
 }

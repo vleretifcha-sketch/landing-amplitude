@@ -10,6 +10,8 @@ type HeroParallax = {
 };
 
 const PARALLAX_SCROLL_VH = 32;
+const DESKTOP_BREAKPOINT = 1024;
+const MOBILE_REVEAL_DISTANCE = 140;
 
 function useHeroParallax(trackRef: RefObject<HTMLDivElement | null>) {
   const [parallax, setParallax] = useState<HeroParallax>({
@@ -32,6 +34,20 @@ function useHeroParallax(trackRef: RefObject<HTMLDivElement | null>) {
     let frame = 0;
 
     const update = () => {
+      const isMobile = window.innerWidth < DESKTOP_BREAKPOINT;
+
+      if (isMobile) {
+        setParallax({
+          opacity: 1,
+          scale: 1,
+          translateZ: 0,
+          blur: 0,
+          brightness: 1,
+        });
+        setProgress(0);
+        return;
+      }
+
       if (prefersReducedMotion) {
         setParallax({
           opacity: 1,
@@ -87,6 +103,42 @@ function phoneScrollStyle(progress: number): CSSProperties {
   };
 }
 
+function useMobilePhonesReveal() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const update = () => {
+      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+        setProgress(0);
+        return;
+      }
+
+      const maxScroll = Math.max(1, window.innerHeight * 0.42);
+      const next = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      setProgress(next);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  return progress;
+}
+
 function parallaxStyle(parallax: HeroParallax): CSSProperties {
   return {
     opacity: parallax.opacity,
@@ -138,23 +190,28 @@ function HeroPhoneDesktop({
   );
 }
 
-function HeroPhoneMobile({ progress }: { progress: number }) {
+function HeroPhoneMobile({ revealProgress }: { revealProgress: number }) {
+  const translateY = (1 - revealProgress) * MOBILE_REVEAL_DISTANCE;
+  const revealStyle: CSSProperties = {
+    transform: `translate3d(0, ${translateY}px, 0)`,
+    opacity: 0.25 + revealProgress * 0.75,
+    willChange: "transform, opacity",
+  };
+
   return (
     <div
       aria-hidden
       className="pointer-events-none relative z-0 flex w-full justify-center lg:hidden"
     >
-      <div className="relative" style={phoneScrollStyle(progress)}>
-        <div className="animate-reveal-up-blur relative -mb-20 [animation-delay:2450ms] sm:-mb-24">
-          <div className="animate-phone-float relative [animation-delay:3s]">
-            <img
-              src="/images/phone-mockup.png"
-              alt=""
-              className="block w-[min(92vw,380px)] max-w-none select-none sm:w-[420px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg from-20% via-bg/70 via-50% to-transparent" />
-          </div>
-        </div>
+      <div
+        className="relative -mb-16 w-[min(calc(100vw-2rem),520px)] max-w-full"
+        style={revealStyle}
+      >
+        <img
+          src="/images/hero-phones-mobile.png"
+          alt=""
+          className="block w-full max-w-none select-none"
+        />
       </div>
     </div>
   );
@@ -163,10 +220,11 @@ function HeroPhoneMobile({ progress }: { progress: number }) {
 export function Hero() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { parallax, progress } = useHeroParallax(trackRef);
+  const mobilePhonesReveal = useMobilePhonesReveal();
 
   return (
     <>
-      <section className="fixed inset-x-0 top-0 z-0 flex h-dvh flex-col overflow-hidden bg-bg px-4 pt-28 sm:px-6 lg:px-8">
+      <section className="relative inset-x-0 top-0 z-0 flex min-h-dvh flex-col overflow-hidden bg-bg px-4 pt-44 sm:px-6 sm:pt-36 lg:fixed lg:h-dvh lg:px-8 lg:pt-28">
         <div
           className="relative mx-auto flex h-full w-full max-w-7xl flex-1 flex-col"
           style={parallaxStyle(parallax)}
@@ -191,9 +249,11 @@ export function Hero() {
                 </h1>
 
                 <p className="animate-reveal-up-blur mt-6 max-w-lg text-base leading-relaxed text-muted-light [animation-delay:1250ms] sm:text-lg">
-                  Une méthode premium de souplesse et mobilité pensée comme un
-                  entraînement — structurée, progressive et compatible avec une vie
-                  normale.
+                  Une méthode premium de souplesse et de mobilité, créée à partir de
+                  plus de 10 années de pratique et d&apos;enseignement. Que votre
+                  objectif soit d&apos;améliorer votre mobilité pour mieux performer
+                  dans votre sport ou d&apos;atteindre des objectifs de souplesse comme
+                  le grand écart.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:justify-center">
@@ -216,8 +276,8 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="mt-8 flex justify-center sm:mt-10 lg:hidden">
-                <HeroPhoneMobile progress={progress} />
+              <div className="mt-2 flex justify-center sm:mt-6 lg:hidden">
+                <HeroPhoneMobile revealProgress={mobilePhonesReveal} />
               </div>
             </div>
           </div>
@@ -225,9 +285,10 @@ export function Hero() {
       </section>
 
       {/* Espace de scroll : 1 écran puis phase parallax avant la vidéo */}
-      <div className="h-dvh" aria-hidden />
+      <div className="hidden h-dvh lg:block" aria-hidden />
       <div
         ref={trackRef}
+        className="hidden lg:block"
         style={{ height: `${PARALLAX_SCROLL_VH}vh` }}
         aria-hidden
       />

@@ -33,7 +33,7 @@ export function ScrollProgress() {
       aria-label="Progression de lecture"
     >
       <div
-        className="h-full origin-left bg-gold transition-[width] duration-150 ease-out"
+        className="h-full origin-left bg-white transition-[width] duration-150 ease-out"
         style={{ width: `${progress * 100}%` }}
       />
     </div>

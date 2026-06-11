@@ -4,6 +4,7 @@ import { Reveal } from "./Reveal";
 const navLinks = [
   { href: "#process", label: "Comment ça marche" },
   { href: "#services", label: "La méthode" },
+  { href: "#tarifs", label: "Tarifs" },
   { href: "#video", label: "Vidéo" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -40,9 +41,10 @@ export function Footer() {
                 <Logo className="h-6 w-auto" />
               </a>
               <p className="mt-4 text-sm leading-relaxed text-muted-light">
-                Une méthode premium de souplesse et mobilité pensée comme un
-                entraînement — structurée, progressive et compatible avec une vie
-                normale.
+                Une méthode premium de souplesse et mobilité créée à partir de
+                plus de 10 années de pratique, d&apos;expérimentation et
+                d&apos;enseignement, conçue pour progresser durablement, de la
+                mobilité fonctionnelle jusqu&apos;au travail des écarts.
               </p>
               <div className="mt-6 flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -52,7 +54,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-border-light bg-card text-muted-light transition-colors duration-200 hover:border-gold/40 hover:bg-card-hover hover:text-gold"
+                    className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-border-light bg-card text-muted-light transition-colors duration-200 hover:border-white/40 hover:bg-card-hover hover:text-white"
                   >
                     {social.icon}
                   </a>

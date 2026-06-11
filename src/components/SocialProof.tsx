@@ -32,8 +32,7 @@ export function SocialProof() {
         ))}
       </div>
       <p className="text-sm leading-snug text-muted-light">
-        <span className="font-medium text-text">+200 personnes</span> l&apos;ont
-        adopté
+        <span className="font-medium text-text">+1000 élèves</span> accompagnés
       </p>
     </div>
   );

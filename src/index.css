@@ -83,15 +83,24 @@
   --color-text: #ffffff;
   --color-muted: #888888;
   --color-muted-light: #a3a3a3;
-  --color-gold: #d4af37;
-  --color-gold-light: #e8c96a;
-  --color-gold-dark: #a68b2a;
+  --color-gold: #ffffff;
+  --color-gold-light: #f5f5f5;
+  --color-gold-dark: #a3a3a3;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
+    overflow-x: hidden;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -110,6 +119,9 @@
 
   body {
     @apply bg-bg font-sans text-text antialiased;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -180,12 +192,10 @@
   .text-gold-gradient {
     background-image: linear-gradient(
       to top,
-      #1f1808 0%,
-      #5c4712 22%,
-      #a68b2a 45%,
-      #e8c96a 68%,
-      #fff3cc 88%,
-      #fffef5 100%
+      #8a8a8a 0%,
+      #a8a8a8 35%,
+      #c8c8c8 70%,
+      #f0f0f0 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -201,11 +211,11 @@
   }
 
   .label-accent {
-    @apply inline-flex items-center rounded-full border border-gold/35 bg-gold/10 px-3.5 py-1 text-xs font-medium tracking-wide text-gold;
+    @apply inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3.5 py-1 text-xs font-medium tracking-wide text-white;
   }
 
   .btn-primary {
-    @apply inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-gold px-6 text-sm font-semibold text-black transition-all duration-200 hover:brightness-110;
+    @apply inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-white px-6 text-sm font-semibold text-black transition-opacity duration-200 hover:opacity-90;
   }
 
   .btn-secondary {

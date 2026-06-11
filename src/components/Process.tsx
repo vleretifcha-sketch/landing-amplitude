@@ -4,18 +4,18 @@ import { RevealGroup } from "./RevealGroup";
 const steps = [
   {
     num: 1,
-    title: "Choisissez votre objectif",
-    desc: "Chaque mois, un objectif précis : grand écart, pancake, mobilité hanches… Une direction claire, pas une bibliothèque infinie.",
+    title: "Un objectif précis",
+    desc: "Chaque mois, un nouveau programme pour progresser en souplesse et mobilité : grand écart, pancakes, mobilité fonctionnelle… Une direction claire, pas une bibliothèque infinie.",
   },
   {
     num: 2,
     title: "Suivez la méthode",
-    desc: "1 cours signature guidé + 2 trainings complémentaires par semaine. Répétition, régularité, précision — comme en musculation.",
+    desc: "Un cours signature guidé plus deux entraînements complémentaires par semaine. Répétition, régularité, précision comme en musculation.",
   },
   {
     num: 3,
-    title: "Progressez en 4 semaines",
-    desc: "Un format identique, une progression mesurable. Peu de contenu, extrêmement qualitatif, des résultats visibles.",
+    title: "Progresser en plusieurs semaines",
+    desc: "Un format identique à répéter pour ancrer les mouvements, gagner en aisance et mesurer ses progrès. La régularité et la répétition sont les clés pour obtenir des résultats.",
   },
 ];
 

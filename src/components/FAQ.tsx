@@ -3,24 +3,28 @@ import { Reveal } from "./Reveal";
 
 const faqs = [
   {
-    q: "En quoi Amplitude est différent d'une app de stretching classique ?",
-    a: "Ce n'est pas une bibliothèque de centaines de vidéos. C'est une méthode structurée : 1 objectif par mois, 1 cours signature, 2 trainings complémentaires, 3 séances max par semaine.",
+    q: "En quoi Amplitude est différente des autres applications de stretching ?",
+    a: "Ce n'est pas une bibliothèque de centaines de vidéos. C'est une méthode structurée. Il est rare de trouver une approche qui maîtrise à la fois la mobilité et la souplesse. Cette application s'appuie sur plus de 10 ans d'expertise pour vous accompagner aussi bien vers une meilleure mobilité fonctionnelle que vers des objectifs avancés comme le grand écart. Une méthode claire, structurée et pensée pour obtenir des résultats durables grâce à la régularité.",
   },
   {
     q: "Faut-il s'entraîner tous les jours ?",
-    a: "Non. La progression vient de la régularité et de la répétition intelligente, pas du volume. Maximum 3 séances de 20 à 30 minutes par semaine.",
+    a: "Non. La progression ne dépend pas du nombre d'heures passées à s'étirer, mais de la qualité de votre pratique et de votre régularité. Quelques minutes de mobilité avant vos séances, associées à 2 ou 3 séances structurées par semaine, produiront souvent de meilleurs résultats que des entraînements quotidiens difficiles à maintenir. La récupération fait partie intégrante de la progression.",
   },
   {
     q: "Pour qui est cette méthode ?",
-    a: "Pour les personnes qui font du fitness, de la musculation ou du pilates et veulent devenir souples sans adopter le mode de vie d'une danseuse ou gymnaste.",
+    a: "Cette méthode s'adresse à toutes les personnes qui souhaitent mieux bouger. Que vous cherchiez à améliorer votre mobilité pour votre pratique sportive, à développer une souplesse avancée comme le grand écart, ou simplement à gagner en aisance dans votre corps au quotidien, vous trouverez ici une approche structurée, progressive et conçue pour produire des résultats durables.",
   },
   {
     q: "Combien de temps pour voir des résultats ?",
-    a: "Chaque programme suit un cycle de 4 semaines avec un objectif précis. La cohérence et la précision du mouvement priment sur la quantité.",
+    a: "Les premiers progrès peuvent apparaître rapidement, mais les transformations les plus importantes demandent du temps. Pour des objectifs comme le grand écart ou le pancake, nous recommandons de suivre le même programme pendant 3 mois. La progression vient de la répétition, de la régularité et de la qualité d'exécution, pas de la nouveauté.",
   },
   {
-    q: "Puis-je rejoindre la liste d'attente avant le lancement ?",
-    a: "Oui. Inscrivez-vous pour être informé en priorité du lancement et accéder aux premières méthodes signatures.",
+    q: "Est-ce adapté pour les débutants ?",
+    a: "Les programmes sont conçus pour s'adapter à différents niveaux. Que vous débutiez ou que vous travailliez déjà des objectifs avancés, vous trouverez des options et des progressions adaptées à votre mobilité actuelle.",
+  },
+  {
+    q: "Que faire si je manque une semaine ?",
+    a: "Aucune inquiétude. La progression en souplesse se construit sur le long terme. Reprenez simplement là où vous vous êtes arrêté et concentrez-vous sur la régularité plutôt que sur la perfection.",
   },
 ];
 
