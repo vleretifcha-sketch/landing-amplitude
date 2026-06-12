@@ -9,7 +9,9 @@ const features = [
   "Communauté privée",
 ];
 
-const stripePaymentLink = import.meta.env.VITE_STRIPE_PAYMENT_LINK ?? "";
+const stripePaymentLink =
+  import.meta.env.VITE_STRIPE_PAYMENT_LINK ??
+  "https://buy.stripe.com/00waEY7x6fT3eKwbmZ2cg02";
 
 export function SubscribePage() {
   return (
@@ -60,21 +62,13 @@ export function SubscribePage() {
             ))}
           </ul>
 
-          {stripePaymentLink ? (
-            <a
-              href={stripePaymentLink}
-              className="btn-primary mt-8 w-full"
-              rel="noopener noreferrer"
-            >
-              Continuer vers le paiement
-            </a>
-          ) : (
-            <p className="surface-inset mt-8 rounded-2xl border border-border px-4 py-3 text-sm text-muted-light">
-              Lien de paiement non configuré. Ajoutez{" "}
-              <code className="text-text">VITE_STRIPE_PAYMENT_LINK</code> dans
-              vos variables d&apos;environnement.
-            </p>
-          )}
+          <a
+            href={stripePaymentLink}
+            className="btn-primary mt-8 w-full"
+            rel="noopener noreferrer"
+          >
+            Continuer vers le paiement
+          </a>
 
           <p className="mt-4 text-center text-xs text-muted">
             Paiement sécurisé par Stripe · Renouvellement mensuel · Résiliation à
