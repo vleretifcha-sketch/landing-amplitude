@@ -50,19 +50,14 @@ export function Pricing() {
                 </div>
               </div>
 
-              <div className="mt-8 hidden flex-col gap-6 sm:flex sm:flex-row sm:items-center sm:justify-between lg:mt-0">
-                <div className="flex items-end gap-3">
-                  <span className="text-6xl font-semibold leading-none tracking-tighter sm:text-7xl">
-                    39
-                  </span>
-                  <div className="pb-1.5">
-                    <span className="block text-2xl font-medium leading-none">€</span>
-                    <span className="mt-1 block text-sm text-muted-light">par mois</span>
-                  </div>
+              <div className="mt-8 hidden items-end gap-3 sm:flex lg:mt-0">
+                <span className="text-6xl font-semibold leading-none tracking-tighter sm:text-7xl">
+                  39
+                </span>
+                <div className="pb-1.5">
+                  <span className="block text-2xl font-medium leading-none">€</span>
+                  <span className="mt-1 block text-sm text-muted-light">par mois</span>
                 </div>
-                <a href="#" className="btn-primary w-full shrink-0 sm:w-auto">
-                  Commencer
-                </a>
               </div>
 
               <ul className="mt-8 space-y-2.5 border-t border-border pt-8">
@@ -78,10 +73,6 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-
-              <a href="#" className="btn-primary mt-8 w-full sm:hidden">
-                Commencer
-              </a>
             </article>
           </Reveal>
         </div>

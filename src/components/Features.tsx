@@ -5,9 +5,9 @@ const features = [
   {
     id: "programme",
     label: "Programme guidé",
-    title: "Un objectif clair, chaque mois",
+    title: "Une direction claire",
     description:
-      "Chaque mois, un programme structuré avec votre cours signature et vos séances complémentaires — pas une bibliothèque infinie.",
+      "Chaque mois, un nouveau programme : grand écart, mobilité fonctionnelle, souplesse du dos… Tous suivent la même direction pour développer ta souplesse et ta mobilité de façon complète et équilibrée.",
     icon: (
       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
         <circle cx="12" cy="12" r="9" />
@@ -19,9 +19,9 @@ const features = [
   {
     id: "mesure",
     label: "Mesure photo",
-    title: "Mesurez votre angle en photo",
+    title: "Des progrès mesurables",
     description:
-      "Placez 3 points sur votre photo pour calculer votre angle — grand écart, pancake, pont… et suivez l'évolution dans le temps.",
+      "Analyse tes amplitudes grâce à l'outil de mesure des angles, puis suis ton évolution avec des statistiques et des graphiques qui montrent précisément tes progrès au fil du temps.",
     icon: (
       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
         <path d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" />
@@ -32,9 +32,9 @@ const features = [
   {
     id: "progres",
     label: "Progrès",
-    title: "Suivez votre évolution",
+    title: "Progresser en plusieurs semaines",
     description:
-      "Stats, graphiques et historique de vos mesures pour voir concrètement où vous en êtes.",
+      "Un format identique à répéter pour ancrer les mouvements, gagner en aisance et mesurer ses progrès. La régularité et la répétition sont les clés pour obtenir des résultats.",
     icon: (
       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
         <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" />
@@ -44,9 +44,9 @@ const features = [
   {
     id: "methodes",
     label: "Méthodes",
-    title: "Des programmes structurés",
+    title: "Suivez la méthode",
     description:
-      "Grand écart, pancake, backbend… Chaque méthode signature suit un parcours de plusieurs semaines.",
+      "Un cours signature guidé plus deux entraînements complémentaires par semaine. Répétition, régularité, précision.",
     icon: (
       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
         <rect x="3" y="3" width="7" height="7" rx="1.5" />
