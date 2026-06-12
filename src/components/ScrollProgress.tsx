@@ -25,7 +25,7 @@ export function ScrollProgress() {
 
   return (
     <div
-      className="pointer-events-none fixed right-0 bottom-0 left-0 z-[60] h-1 bg-white/10"
+      className="pointer-events-none fixed right-0 bottom-0 left-0 z-[60] h-1 bg-gold-subtle"
       role="progressbar"
       aria-valuenow={Math.round(progress * 100)}
       aria-valuemin={0}
@@ -33,7 +33,7 @@ export function ScrollProgress() {
       aria-label="Progression de lecture"
     >
       <div
-        className="h-full origin-left bg-white transition-[width] duration-150 ease-out"
+        className="h-full origin-left bg-gold transition-[width] duration-150 ease-out"
         style={{ width: `${progress * 100}%` }}
       />
     </div>

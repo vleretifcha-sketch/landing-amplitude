@@ -3,6 +3,7 @@ import { Reveal } from "./Reveal";
 
 const navLinks = [
   { href: "#process", label: "Comment ça marche" },
+  { href: "#fonctionnalites", label: "L'app" },
   { href: "#services", label: "La méthode" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#video", label: "Vidéo" },
@@ -32,7 +33,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative z-10 border-t border-border bg-bg px-4 py-14 sm:px-6 lg:px-8">
+    <footer className="relative z-10 border-t border-border bg-bg px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
@@ -54,7 +55,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-border-light bg-card text-muted-light transition-colors duration-200 hover:border-white/40 hover:bg-card-hover hover:text-white"
+                    className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-border-light bg-card text-muted-light transition-colors duration-200 hover:border-gold/40 hover:bg-card-hover hover:text-gold"
                   >
                     {social.icon}
                   </a>
@@ -73,7 +74,7 @@ export function Footer() {
                     <li key={link.href}>
                       <a
                         href={link.href}
-                        className="text-sm text-muted-light transition-colors duration-200 hover:text-text"
+                        className="text-sm text-muted-light transition-colors duration-200 hover:text-gold"
                       >
                         {link.label}
                       </a>
@@ -87,7 +88,7 @@ export function Footer() {
                   <li>
                     <a
                       href="#faq"
-                      className="text-sm text-muted-light transition-colors duration-200 hover:text-text"
+                      className="text-sm text-muted-light transition-colors duration-200 hover:text-gold"
                     >
                       Nous contacter
                     </a>

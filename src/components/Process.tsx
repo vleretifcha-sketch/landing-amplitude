@@ -1,5 +1,4 @@
 import { Reveal } from "./Reveal";
-import { RevealGroup } from "./RevealGroup";
 
 const steps = [
   {
@@ -21,7 +20,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="px-4 py-24 sm:px-6 lg:px-8">
+    <section id="process" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="label-accent">Processus</p>
@@ -30,19 +29,31 @@ export function Process() {
           </h2>
         </Reveal>
 
-        <RevealGroup className="mt-14 grid gap-5 md:grid-cols-3" stagger={300}>
-          {steps.map((step) => (
-            <article key={step.num} className="card-dark h-full p-6 sm:p-8">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-bold text-black">
-                {step.num}
-              </div>
-              <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-light">
-                {step.desc}
-              </p>
-            </article>
-          ))}
-        </RevealGroup>
+        <div className="mt-8 grid gap-10 sm:mt-12 lg:mt-14 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-12 xl:gap-16">
+          <div className="flex flex-col gap-5">
+            {steps.map((step) => (
+              <article key={step.num} className="card-dark p-6 sm:p-8">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-sm font-bold text-on-gold">
+                  {step.num}
+                </div>
+                <h3 className="mt-6 text-lg font-semibold">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-light">
+                  {step.desc}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-center lg:justify-end">
+            <img
+              src="/images/process-phones.png"
+              alt="Aperçu de l'application Amplitude"
+              width={384}
+              height={616}
+              className="w-full max-w-[384px] select-none"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

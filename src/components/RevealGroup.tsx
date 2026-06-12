@@ -14,12 +14,17 @@ type RevealGroupProps = {
   itemClassName?: (index: number) => string | undefined;
 };
 
-export function RevealGroup({
+function RevealGroupItem({
   children,
+  index,
+  stagger,
   className = "",
-  stagger = 280,
-  itemClassName,
-}: RevealGroupProps) {
+}: {
+  children: ReactNode;
+  index: number;
+  stagger: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -43,36 +48,49 @@ export function RevealGroup({
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.15, rootMargin: "0px 0px -4% 0px" },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
+  const style: CSSProperties | undefined =
+    visible && stagger > 0
+      ? { animationDelay: `${index * stagger}ms` }
+      : undefined;
+
   return (
-    <div ref={ref} className={className}>
-      {Children.map(children, (child, index) => {
-        const style: CSSProperties = visible
-          ? { animationDelay: `${index * stagger}ms` }
-          : {};
+    <div
+      ref={ref}
+      className={`${
+        visible ? "animate-reveal-fade" : "opacity-0"
+      } ${className}`}
+      style={style}
+    >
+      {children}
+    </div>
+  );
+}
 
-        const itemClasses = itemClassName?.(index);
-
-        return (
-          <div
-            key={index}
-            className={`${
-              visible
-                ? "animate-reveal-up-blur"
-                : "translate-y-7 opacity-0 blur-[10px]"
-            } ${itemClasses ?? ""}`}
-            style={style}
-          >
-            {child}
-          </div>
-        );
-      })}
+export function RevealGroup({
+  children,
+  className = "",
+  stagger = 280,
+  itemClassName,
+}: RevealGroupProps) {
+  return (
+    <div className={className}>
+      {Children.map(children, (child, index) => (
+        <RevealGroupItem
+          key={index}
+          index={index}
+          stagger={stagger}
+          className={itemClassName?.(index)}
+        >
+          {child}
+        </RevealGroupItem>
+      ))}
     </div>
   );
 }

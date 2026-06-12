@@ -30,12 +30,12 @@ export function VideoSection() {
     <section
       id="video"
       aria-label="Présentation vidéo"
-      className="px-4 pt-6 pb-16 sm:px-6 sm:pt-8 sm:pb-20 lg:px-8 lg:pt-10 lg:pb-28"
+      className="px-4 pt-4 pb-10 sm:px-6 sm:pt-8 sm:pb-20 lg:px-8 lg:pt-10 lg:pb-28"
     >
       <div ref={sectionRef} className="mx-auto w-full max-w-7xl">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card">
-            <div className="relative aspect-video w-full bg-black">
+            <div className="relative aspect-video w-full bg-media-bg">
               {shouldLoad ? (
                 <iframe
                   src={VIMEO_EMBED_SRC}

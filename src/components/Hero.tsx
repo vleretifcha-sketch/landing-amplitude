@@ -162,7 +162,7 @@ function HeroPhoneDesktop({
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute top-1/2 hidden -translate-y-[42%] lg:block ${
+      className={`pointer-events-none absolute top-1/2 z-0 hidden -translate-y-[42%] lg:block ${
         isLeft
           ? "left-0 -translate-x-[8%] rotate-[-12deg] xl:left-2"
           : "right-0 translate-x-[8%] rotate-[12deg] xl:right-2"
@@ -182,7 +182,7 @@ function HeroPhoneDesktop({
                 isLeft ? "" : "scale-x-[-1]"
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg from-25% via-bg/70 via-55% to-transparent" />
+            <div className="hero-phone-fade" aria-hidden />
           </div>
         </div>
       </div>
@@ -212,6 +212,7 @@ function HeroPhoneMobile({ revealProgress }: { revealProgress: number }) {
           alt=""
           className="block w-full max-w-none select-none"
         />
+        <div className="hero-phone-fade hero-phone-fade--mobile" aria-hidden />
       </div>
     </div>
   );
@@ -233,7 +234,9 @@ export function Hero() {
             <HeroPhoneDesktop side="left" progress={progress} />
             <HeroPhoneDesktop side="right" progress={progress} />
 
-            <div className="relative z-10 flex flex-1 flex-col lg:items-center lg:justify-center">
+            <div className="hero-bottom-fade" aria-hidden />
+
+            <div className="relative z-20 flex flex-1 flex-col lg:items-center lg:justify-center">
               <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
                 <span className="label-accent animate-reveal-up-blur mb-5 [animation-delay:350ms]">
                   Nouveauté
@@ -248,12 +251,12 @@ export function Hero() {
                   </span>
                 </h1>
 
-                <p className="animate-reveal-up-blur mt-6 max-w-lg text-base leading-relaxed text-muted-light [animation-delay:1250ms] sm:text-lg">
+                <p className="animate-reveal-up-blur mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted-light [animation-delay:1250ms] sm:text-lg">
                   Une méthode premium de souplesse et de mobilité, créée à partir de
                   plus de 10 années de pratique et d&apos;enseignement. Que votre
                   objectif soit d&apos;améliorer votre mobilité pour mieux performer
                   dans votre sport ou d&apos;atteindre des objectifs de souplesse comme
-                  le grand écart.
+                  le grand&nbsp;écart.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:justify-center">
@@ -275,10 +278,10 @@ export function Hero() {
                   <SocialProof />
                 </div>
               </div>
+            </div>
 
-              <div className="mt-2 flex justify-center sm:mt-6 lg:hidden">
-                <HeroPhoneMobile revealProgress={mobilePhonesReveal} />
-              </div>
+            <div className="relative z-0 mt-10 flex justify-center sm:mt-12 lg:hidden">
+              <HeroPhoneMobile revealProgress={mobilePhonesReveal} />
             </div>
           </div>
         </div>

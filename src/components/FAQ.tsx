@@ -32,8 +32,8 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+    <section id="faq" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
         <Reveal>
           <p className="label-accent">Réponses</p>
           <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
@@ -55,7 +55,11 @@ export function FAQ() {
                   >
                     <span className="text-sm font-medium sm:text-base">{item.q}</span>
                     <span
-                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border text-muted-light transition-transform duration-200"
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-transform duration-200 ${
+                        isOpen
+                          ? "border-gold/40 bg-gold-subtle text-gold"
+                          : "border-border text-muted-light"
+                      }`}
                       style={{ transform: isOpen ? "rotate(45deg)" : undefined }}
                       aria-hidden="true"
                     >

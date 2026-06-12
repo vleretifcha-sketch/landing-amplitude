@@ -182,7 +182,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-white/10"
+              className="text-gold/20"
             />
             <circle
               ref={ringRef}
@@ -193,14 +193,14 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
-              className="text-white"
+              className="text-gold"
               strokeDasharray={RING_CIRCUMFERENCE}
               strokeDashoffset={RING_CIRCUMFERENCE}
             />
           </svg>
           <span
             ref={labelRef}
-            className="absolute text-lg font-medium tabular-nums text-white"
+            className="absolute text-lg font-medium tabular-nums text-text"
           >
             0
           </span>
