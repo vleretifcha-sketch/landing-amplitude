@@ -23,10 +23,12 @@ export function Process() {
     <section id="process" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="label-accent">Processus</p>
-          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-            Comment ça marche
-          </h2>
+          <div className="section-header">
+            <p className="label-accent">Processus</p>
+            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+              Comment ça marche
+            </h2>
+          </div>
         </Reveal>
 
         <div className="mt-8 grid gap-10 sm:mt-12 lg:mt-14 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-12 xl:gap-16">

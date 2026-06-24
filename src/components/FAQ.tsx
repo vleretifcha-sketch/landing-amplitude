@@ -33,15 +33,17 @@ export function FAQ() {
 
   return (
     <section id="faq" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="label-accent">Réponses</p>
-          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-            FAQ
-          </h2>
+          <div className="section-header">
+            <p className="label-accent">Réponses</p>
+            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+              FAQ
+            </h2>
+          </div>
         </Reveal>
 
-        <div className="space-y-3">
+        <div className="mx-auto mt-8 max-w-3xl space-y-3 sm:mt-12">
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (

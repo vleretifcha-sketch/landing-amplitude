@@ -291,6 +291,10 @@
     color: var(--color-badge-text);
   }
 
+  .section-header {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
   .btn-primary {
     @apply inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-[12px] bg-gold px-6 text-sm font-semibold text-on-gold transition-opacity duration-200 hover:opacity-90;
   }

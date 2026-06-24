@@ -9,10 +9,12 @@ export function Services() {
     <section id="services" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="label-accent">La méthode</p>
-          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-            Ce que je propose
-          </h2>
+          <div className="section-header">
+            <p className="label-accent">La méthode</p>
+            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+              Ce que je propose
+            </h2>
+          </div>
         </Reveal>
 
         <RevealGroup

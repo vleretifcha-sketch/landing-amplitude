@@ -82,14 +82,16 @@ export function Features() {
     <section id="fonctionnalites" className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="label-accent">L&apos;app</p>
-          <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-            Tout ce qu&apos;il faut pour progresser
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-light sm:text-base">
-            Une app pensée comme un coach : objectif mensuel, séances guidées, mesures
-            précises, méthodes structurées et communauté pour partager vos progrès.
-          </p>
+          <div className="section-header">
+            <p className="label-accent">L&apos;app</p>
+            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+              Tout ce qu&apos;il faut pour progresser
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-light sm:text-base">
+              Une app pensée comme un coach : objectif mensuel, séances guidées, mesures
+              précises, méthodes structurées et communauté pour partager vos progrès.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={120}>
