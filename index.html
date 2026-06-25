@@ -9,6 +9,27 @@
     />
     <title>Amplitude — Souplesse & mobilité</title>
     <script>
+      (function () {
+        var path = location.pathname.replace(/\/$/, "") || "/";
+        if (path !== "/payment-success") return;
+        document.title = "Retour vers Amplitude";
+
+        var params = new URLSearchParams(window.location.search);
+        var url = params.get("app_success") || "amplitude://payment-success";
+
+        if (!params.get("app_success") && params.toString()) {
+          url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
+        }
+
+        window.location.replace(url);
+
+        setTimeout(function () {
+          var fallback = document.getElementById("fallback");
+          if (fallback) fallback.style.display = "block";
+        }, 2000);
+      })();
+    </script>
+    <script>
       document.documentElement.setAttribute("data-theme", "dark");
       document.documentElement.style.colorScheme = "dark";
     </script>
