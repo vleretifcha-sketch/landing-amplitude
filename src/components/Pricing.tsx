@@ -24,7 +24,7 @@ const plans = [
     cta: "Rejoindre Amplitude",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE ??
-      "https://buy.stripe.com/00waEY7x6fT3eKwbmZ2cg02",
+      "https://buy.stripe.com/dRm6oIaJi36h8m84YB2cg03",
     variant: "secondary" as const,
   },
   {
@@ -46,7 +46,9 @@ const plans = [
       "7 jours satisfait ou remboursé",
     ],
     cta: "Rejoindre Amplitude Pro",
-    href: import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_PRO ?? "#",
+    href:
+      import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_PRO ??
+      "https://buy.stripe.com/28E3cw18I0Y9fOAdv72cg04",
     variant: "primary" as const,
   },
   {
@@ -68,7 +70,9 @@ const plans = [
       "-20 % sur les offres individuelles & workshops",
     ],
     cta: "Rejoindre Amplitude Max",
-    href: import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ?? "#",
+    href:
+      import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
+      "https://book.stripe.com/bJe4gA04E7mxdGsgHj2cg05",
     variant: "secondary" as const,
   },
 ];
