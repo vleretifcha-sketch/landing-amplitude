@@ -15,7 +15,7 @@ const avatars = [
 
 export function SocialProof() {
   return (
-    <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+    <div className="flex flex-row items-center gap-3 lg:flex-col lg:items-center lg:gap-3">
       <div className="flex -space-x-2.5">
         {avatars.map((avatar, index) => (
           <div

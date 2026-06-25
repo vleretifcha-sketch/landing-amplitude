@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
 import { Reveal } from "./Reveal";
-
-const LAUNCH_END = new Date("2026-07-31T23:59:59+02:00");
+import { useLaunchCountdown } from "../hooks/useLaunchCountdown";
+import { LAUNCH_END } from "../lib/launch";
 
 const plans = [
   {
     id: "amplitude",
-    brand: "AMPLITUDE",
+    brand: "amplitude",
     title: "L'offre annuelle",
     price: "149",
     period: "/an",
@@ -29,7 +28,7 @@ const plans = [
   },
   {
     id: "pro",
-    brand: "AMPLITUDE PRO",
+    brand: "amplitude pro",
     title: "L'offre annuelle avec suivi",
     price: "249",
     period: "/an",
@@ -53,13 +52,13 @@ const plans = [
   },
   {
     id: "max",
-    brand: "AMPLITUDE MAX",
+    brand: "amplitude max",
     title: "L'offre fondateur, à vie !",
     price: "499",
     period: "",
     compareAt: "998 €",
     discount: "-50 %",
-    badge: "À VIE",
+    badge: "à vie",
     features: [
       "Tout ce qu'il y a dans l'offre Amplitude Pro",
       "Accès à vie à l'application Amplitude",
@@ -83,26 +82,6 @@ const trustItems = [
   "iOS & Android",
 ];
 
-function useLaunchCountdown(endDate: Date) {
-  const [remaining, setRemaining] = useState(() =>
-    Math.max(0, endDate.getTime() - Date.now()),
-  );
-
-  useEffect(() => {
-    const tick = () =>
-      setRemaining(Math.max(0, endDate.getTime() - Date.now()));
-    tick();
-    const id = window.setInterval(tick, 1000);
-    return () => window.clearInterval(id);
-  }, [endDate]);
-
-  const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((remaining / (1000 * 60)) % 60);
-  const seconds = Math.floor((remaining / 1000) % 60);
-
-  return { days, hours, minutes, seconds, expired: remaining === 0 };
-}
 
 function FeatureList({ items }: { items: string[] }) {
   return (
@@ -151,7 +130,7 @@ function PricingCard({
       ) : null}
 
       <div>
-        <p className="text-[11px] font-semibold tracking-[0.18em] text-gold uppercase">
+        <p className="text-[11px] font-semibold tracking-[0.18em] text-gold">
           {plan.brand}
         </p>
         <h3 className="mt-2 text-lg font-semibold tracking-tight sm:text-xl">
@@ -200,12 +179,12 @@ export function Pricing() {
         <Reveal>
           <div className="section-header">
             <p className="label-accent">
-              Offre spéciale lancement · Valable jusqu&apos;au 31 juillet
+              Offre de lancement
             </p>
-            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
               Rejoins la communauté Amplitude
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-light sm:text-base">
+            <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
               À l&apos;occasion du lancement, l&apos;abonnement annuel est à
               -50&nbsp;%, avec deux formules inédites comprenant du coaching pour
               celles et ceux qui veulent aller plus loin (accessibles uniquement
@@ -215,11 +194,11 @@ export function Pricing() {
         </Reveal>
 
         <Reveal delay={80}>
-          <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-gold/25 bg-gold-subtle px-5 py-4 text-center sm:mt-10">
+          <div className="mt-10 max-w-xl rounded-2xl border border-gold/25 bg-gold-subtle px-5 py-5 text-left sm:mx-auto sm:mt-12 sm:px-6 sm:py-6 sm:text-center">
             <p className="text-[11px] font-semibold tracking-[0.16em] text-muted-light uppercase">
               L&apos;offre se termine dans
             </p>
-            <p className="mt-2 text-2xl font-semibold tracking-tight text-gold tabular-nums sm:text-3xl">
+            <p className="mt-3 text-2xl font-semibold tracking-tight text-gold tabular-nums sm:text-3xl">
               {countdown.expired
                 ? "Offre terminée"
                 : `${countdown.days}j ${countdown.hours}h ${countdown.minutes}m ${countdown.seconds}s`}
@@ -227,7 +206,7 @@ export function Pricing() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid items-stretch gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-6">
+        <div className="mt-12 grid items-stretch gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-6">
           {plans.map((plan, index) => (
             <div key={plan.id} className="flex min-h-0 flex-col">
               <Reveal delay={120 + index * 80} className="flex h-full flex-1 flex-col">

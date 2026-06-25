@@ -3,28 +3,36 @@ import { Reveal } from "./Reveal";
 
 const faqs = [
   {
-    q: "En quoi Amplitude est différente des autres applications de stretching ?",
-    a: "Ce n'est pas une bibliothèque de centaines de vidéos. C'est une méthode structurée. Il est rare de trouver une approche qui maîtrise à la fois la mobilité et la souplesse. Cette application s'appuie sur plus de 10 ans d'expertise pour vous accompagner aussi bien vers une meilleure mobilité fonctionnelle que vers des objectifs avancés comme le grand écart. Une méthode claire, structurée et pensée pour obtenir des résultats durables grâce à la régularité.",
+    q: "En quoi Amplitude est différente des autres applis de souplesse ?",
+    a: "La plupart des applis te balancent une bibliothèque de vidéos et te laissent te débrouiller. Amplitude te donne un vrai programme : un objectif, une progression structurée semaine après semaine, et la logique de la muscu appliquée à la souplesse. Tu sais toujours quoi faire — et tu mesures tes progrès.",
   },
   {
     q: "Faut-il s'entraîner tous les jours ?",
-    a: "Non. La progression ne dépend pas du nombre d'heures passées à s'étirer, mais de la qualité de votre pratique et de votre régularité. Quelques minutes de mobilité avant vos séances, associées à 2 ou 3 séances structurées par semaine, produiront souvent de meilleurs résultats que des entraînements quotidiens difficiles à maintenir. La récupération fait partie intégrante de la progression.",
+    a: "Non, quelques séances par semaine suffisent. C'est la régularité qui fait gagner des degrés, pas l'acharnement quotidien — et ça tient dans un planning de sportif déjà bien rempli.",
   },
   {
-    q: "Pour qui est cette méthode ?",
-    a: "Cette méthode s'adresse à toutes les personnes qui souhaitent mieux bouger. Que vous cherchiez à améliorer votre mobilité pour votre pratique sportive, à développer une souplesse avancée comme le grand écart, ou simplement à gagner en aisance dans votre corps au quotidien, vous trouverez ici une approche structurée, progressive et conçue pour produire des résultats durables.",
+    q: "Je suis débutant(e) / très raide, est-ce que ça marche ?",
+    a: "Oui, c'est 100 % adapté pour toi ! La méthode part de là où tu en es et construit ta souplesse progressivement, sans exercices irréalistes ni risque de blessure. Plus tu es raide aujourd'hui, plus ta marge de progression est grande.",
   },
   {
     q: "Combien de temps pour voir des résultats ?",
-    a: "Les premiers progrès peuvent apparaître rapidement, mais les transformations les plus importantes demandent du temps. Pour des objectifs comme le grand écart ou le pancake, nous recommandons de suivre le même programme pendant 3 mois. La progression vient de la répétition, de la régularité et de la qualité d'exécution, pas de la nouveauté.",
+    a: "Les premiers degrés gagnés se voient en quelques semaines chez les élèves réguliers — et tu les mesures dans l'app. Pas de délai magique : c'est la régularité qui parle. Les avant/après de cette page se jouent sur 2 à 3 mois.",
   },
   {
-    q: "Est-ce adapté pour les débutants ?",
-    a: "Les programmes sont conçus pour s'adapter à différents niveaux. Que vous débutiez ou que vous travailliez déjà des objectifs avancés, vous trouverez des options et des progressions adaptées à votre mobilité actuelle.",
+    q: "Pourquoi pas d'abonnement au mois pour le lancement ?",
+    a: "Parce que la souplesse se construit sur la durée — un mois ne suffit pas à la transformer. La formule annuelle te met dans les vraies conditions de progresser, et au tarif de lancement elle revient à environ 12 €/mois. Un mensuel pourra arriver plus tard, mais pas pour l'ouverture.",
   },
   {
-    q: "Que faire si je manque une semaine ?",
-    a: "Aucune inquiétude. La progression en souplesse se construit sur le long terme. Reprenez simplement là où vous vous êtes arrêté et concentrez-vous sur la régularité plutôt que sur la perfection.",
+    q: "Et si ça ne me convient pas ?",
+    a: "Tu es couvert(e) par la garantie 7 jours satisfait ou remboursé : tu testes la méthode, et si ce n'est pas pour toi, tu te fais rembourser sans avoir à te justifier. Tu ne prends aucun risque.",
+  },
+  {
+    q: "Combien de temps dure une séance ?",
+    a: "Compte environ 20 à 45 minutes par séance, une fois par semaine, selon ton objectif. Assez court pour tenir dans ton emploi du temps, assez dense pour faire progresser ton amplitude.",
+  },
+  {
+    q: "Sur quels appareils, et si je ne renouvelle pas ?",
+    a: "Amplitude fonctionne sur iOS et Android, mobile et tablette. Ton abonnement annuel est sans reconduction surprise : à la fin de l'année, tu choisis librement de continuer. Avec l'offre Fondateur à vie, tu gardes l'accès pour toujours.",
   },
 ];
 
@@ -36,14 +44,14 @@ export function FAQ() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="section-header">
-            <p className="label-accent">Réponses</p>
-            <h2 className="mt-3 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
-              FAQ
+            <p className="label-accent">Des questions avant de te lancer ?</p>
+            <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
+              Je te réponds ici (ou sur @mylene_miletto)
             </h2>
           </div>
         </Reveal>
 
-        <div className="mx-auto mt-8 max-w-3xl space-y-3 sm:mt-12">
+        <div className="mx-auto mt-10 max-w-3xl space-y-3 sm:mt-12">
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (
@@ -70,7 +78,7 @@ export function FAQ() {
                   </button>
                   {isOpen && (
                     <div className="border-t border-border px-6 pb-5">
-                      <p className="pt-4 text-sm leading-relaxed text-muted-light">
+                      <p className="pt-4 text-sm leading-[1.75] text-muted-light">
                         {item.a}
                       </p>
                     </div>

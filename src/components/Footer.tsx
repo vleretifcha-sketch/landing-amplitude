@@ -2,9 +2,10 @@ import { Logo } from "./Logo";
 import { Reveal } from "./Reveal";
 
 const navLinks = [
-  { href: "#process", label: "Comment ça marche" },
-  { href: "#fonctionnalites", label: "L'app" },
-  { href: "#services", label: "La méthode" },
+  { href: "#process", label: "La réalité" },
+  { href: "#app", label: "L'app" },
+  { href: "#fonctionnalites", label: "Programmes" },
+  { href: "#services", label: "Fonctionnalités" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#video", label: "Vidéo" },
   { href: "#faq", label: "FAQ" },
@@ -63,46 +64,20 @@ export function Footer() {
               </div>
             </div>
 
-            <nav
-              className="flex flex-col gap-3 sm:flex-row sm:gap-12"
-              aria-label="Navigation pied de page"
-            >
-              <div>
-                <p className="label-accent mb-4">Navigation</p>
-                <ul className="space-y-2.5">
-                  {navLinks.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={link.href}
-                        className="text-sm text-muted-light transition-colors duration-200 hover:text-gold"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="label-accent mb-4">Contact</p>
-                <ul className="space-y-2.5">
-                  <li>
+            <nav aria-label="Navigation pied de page">
+              <p className="label-accent mb-4">Navigation</p>
+              <ul className="space-y-2.5">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
                     <a
-                      href="#faq"
+                      href={link.href}
                       className="text-sm text-muted-light transition-colors duration-200 hover:text-gold"
                     >
-                      Nous contacter
+                      {link.label}
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="#services"
-                      className="btn-primary mt-1 inline-flex h-10 px-5 text-sm"
-                    >
-                      Accéder à l&apos;app
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                ))}
+              </ul>
             </nav>
           </div>
         </Reveal>

@@ -3,9 +3,10 @@ import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "#process", label: "Comment ça marche" },
-  { href: "#fonctionnalites", label: "L'app" },
-  { href: "#services", label: "La méthode" },
+  { href: "#process", label: "La réalité" },
+  { href: "#app", label: "L'app" },
+  { href: "#fonctionnalites", label: "Programmes" },
+  { href: "#services", label: "Fonctionnalités" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -61,28 +62,28 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <a
           href="#"
-          className="animate-reveal-down cursor-pointer [animation-delay:0ms]"
+          className="animate-reveal-down shrink-0 cursor-pointer [animation-delay:0ms]"
           aria-label="Amplitude — accueil"
         >
           <Logo />
         </a>
 
-        <nav
-          className="nav-pill animate-reveal-down absolute top-5 left-1/2 hidden -translate-x-1/2 items-center gap-1 px-2 py-2 [animation-delay:520ms] lg:flex"
-          aria-label="Navigation principale"
-        >
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="cursor-pointer rounded-full px-4 py-2 text-sm text-muted-light transition-colors duration-200 hover:bg-gold-subtle hover:text-gold"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
         <div className="animate-reveal-down flex items-center gap-2 [animation-delay:280ms] sm:gap-3">
+          <nav
+            className="nav-pill hidden items-center gap-1 px-2 py-2 [animation-delay:520ms] lg:flex"
+            aria-label="Navigation principale"
+          >
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="cursor-pointer rounded-full px-3.5 py-2 text-sm text-muted-light transition-colors duration-200 hover:bg-gold-subtle hover:text-gold xl:px-4"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
           <ThemeToggle />
           <button
             type="button"
@@ -94,10 +95,6 @@ export function Header() {
           >
             <MenuIcon open={menuOpen} />
           </button>
-
-          <a href="#faq" className="btn-secondary shrink-0">
-            Contact
-          </a>
         </div>
       </div>
 

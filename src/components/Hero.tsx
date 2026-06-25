@@ -11,7 +11,6 @@ type HeroParallax = {
 
 const PARALLAX_SCROLL_VH = 32;
 const DESKTOP_BREAKPOINT = 1024;
-const MOBILE_REVEAL_DISTANCE = 140;
 
 function useHeroParallax(trackRef: RefObject<HTMLDivElement | null>) {
   const [parallax, setParallax] = useState<HeroParallax>({
@@ -103,42 +102,6 @@ function phoneScrollStyle(progress: number): CSSProperties {
   };
 }
 
-function useMobilePhonesReveal() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    let frame = 0;
-
-    const update = () => {
-      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
-        setProgress(0);
-        return;
-      }
-
-      const maxScroll = Math.max(1, window.innerHeight * 0.42);
-      const next = Math.min(1, Math.max(0, window.scrollY / maxScroll));
-      setProgress(next);
-    };
-
-    const onScroll = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, []);
-
-  return progress;
-}
-
 function parallaxStyle(parallax: HeroParallax): CSSProperties {
   return {
     opacity: parallax.opacity,
@@ -148,6 +111,22 @@ function parallaxStyle(parallax: HeroParallax): CSSProperties {
     transformStyle: "preserve-3d",
     willChange: "transform, opacity, filter",
   };
+}
+
+function HeroMobileVisual() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden lg:hidden"
+      aria-hidden
+    >
+      <img
+        src="/images/hero-mobile-visual.png"
+        alt=""
+        className="hero-mobile-visual absolute max-w-none select-none"
+      />
+      <div className="hero-mobile-scrim" aria-hidden />
+    </div>
+  );
 }
 
 function HeroPhoneDesktop({
@@ -164,8 +143,8 @@ function HeroPhoneDesktop({
       aria-hidden
       className={`pointer-events-none absolute top-1/2 z-0 hidden -translate-y-[42%] lg:block ${
         isLeft
-          ? "left-0 -translate-x-[8%] rotate-[-12deg] xl:left-2"
-          : "right-0 translate-x-[8%] rotate-[12deg] xl:right-2"
+          ? "left-0 -translate-x-[4%] rotate-[-10deg] xl:left-4"
+          : "right-0 translate-x-[4%] rotate-[10deg] xl:right-4"
       }`}
     >
       <div className="relative" style={phoneScrollStyle(progress)}>
@@ -176,10 +155,16 @@ function HeroPhoneDesktop({
             className={`relative ${isLeft ? "animate-phone-float [animation-delay:3.2s]" : "animate-phone-float-slow [animation-delay:3.6s]"}`}
           >
             <img
-              src="/images/phone-mockup.png"
+              src={
+                isLeft
+                  ? "/images/hero-phone-left.png"
+                  : "/images/hero-phone-right.png"
+              }
               alt=""
-              className={`block w-[480px] max-w-none select-none xl:w-[560px] ${
-                isLeft ? "" : "scale-x-[-1]"
+              className={`block max-w-none select-none ${
+                isLeft
+                  ? "w-[400px] xl:w-[460px]"
+                  : "w-[400px] xl:w-[460px]"
               }`}
             />
             <div className="hero-phone-fade" aria-hidden />
@@ -190,44 +175,20 @@ function HeroPhoneDesktop({
   );
 }
 
-function HeroPhoneMobile({ revealProgress }: { revealProgress: number }) {
-  const translateY = (1 - revealProgress) * MOBILE_REVEAL_DISTANCE;
-  const revealStyle: CSSProperties = {
-    transform: `translate3d(0, ${translateY}px, 0)`,
-    opacity: 0.25 + revealProgress * 0.75,
-    willChange: "transform, opacity",
-  };
-
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none relative z-0 flex w-full justify-center lg:hidden"
-    >
-      <div
-        className="relative -mb-16 w-[min(calc(100vw-2rem),520px)] max-w-full"
-        style={revealStyle}
-      >
-        <img
-          src="/images/hero-phones-mobile.png"
-          alt=""
-          className="block w-full max-w-none select-none"
-        />
-        <div className="hero-phone-fade hero-phone-fade--mobile" aria-hidden />
-      </div>
-    </div>
-  );
-}
-
 export function Hero() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { parallax, progress } = useHeroParallax(trackRef);
-  const mobilePhonesReveal = useMobilePhonesReveal();
 
   return (
     <>
-      <section className="relative inset-x-0 top-0 z-0 flex min-h-dvh flex-col overflow-hidden bg-bg px-4 pt-44 sm:px-6 sm:pt-36 lg:fixed lg:h-dvh lg:px-8 lg:pt-28">
+      <section
+        id="hero"
+        className="relative inset-x-0 top-0 z-0 flex min-h-dvh flex-col overflow-x-clip bg-bg px-4 pb-8 pt-24 sm:px-6 sm:pb-10 lg:fixed lg:h-dvh lg:overflow-hidden lg:px-8 lg:pb-0 lg:pt-28"
+      >
+        <HeroMobileVisual />
+
         <div
-          className="relative mx-auto flex h-full w-full max-w-7xl flex-1 flex-col"
+          className="relative mx-auto flex h-full min-h-[calc(100dvh-6rem)] w-full max-w-7xl flex-1 flex-col lg:min-h-0"
           style={parallaxStyle(parallax)}
         >
           <div className="relative flex min-h-0 flex-1 flex-col">
@@ -236,8 +197,8 @@ export function Hero() {
 
             <div className="hero-bottom-fade" aria-hidden />
 
-            <div className="relative z-20 flex flex-1 flex-col lg:items-center lg:justify-center">
-              <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+            <div className="relative z-20 flex flex-1 flex-col justify-end lg:items-center lg:justify-center">
+              <div className="flex w-full max-w-3xl flex-col items-start text-left lg:mx-auto lg:items-center lg:text-center">
                 <span className="label-accent animate-reveal-up-blur mb-5 [animation-delay:350ms]">
                   Nouveauté
                 </span>
@@ -252,23 +213,21 @@ export function Hero() {
                 </h1>
 
                 <p className="animate-reveal-up-blur mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted-light [animation-delay:1250ms] sm:text-lg">
-                  Une méthode premium de souplesse et de mobilité, créée à partir de
-                  plus de 10 années de pratique et d&apos;enseignement. Que votre
-                  objectif soit d&apos;améliorer votre mobilité pour mieux performer
-                  dans votre sport ou d&apos;atteindre des objectifs de souplesse comme
-                  le grand&nbsp;écart.
+                  Découvre Amplitude&nbsp;: une application 100&nbsp;% mobile et
+                  100&nbsp;% progression, structurée avec la rigueur d&apos;un programme
+                  fitness pour atteindre tous tes objectifs de souplesse et mobilité.
                 </p>
 
-                <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:justify-center">
+                <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 lg:w-auto lg:flex-row lg:justify-center">
                   <a
                     href="#services"
-                    className="btn-primary animate-reveal-up-blur w-full [animation-delay:1650ms] sm:w-auto"
+                    className="btn-primary animate-reveal-up-blur w-full [animation-delay:1650ms] lg:w-auto"
                   >
-                    Accéder à l&apos;app
+                    Rejoindre Amplitude
                   </a>
                   <a
                     href="#services"
-                    className="btn-secondary animate-reveal-up-blur w-full [animation-delay:2050ms] sm:w-auto"
+                    className="btn-secondary animate-reveal-up-blur w-full [animation-delay:2050ms] lg:w-auto"
                   >
                     En savoir plus
                   </a>
@@ -279,10 +238,6 @@ export function Hero() {
                 </div>
               </div>
             </div>
-
-            <div className="relative z-0 mt-10 flex justify-center sm:mt-12 lg:hidden">
-              <HeroPhoneMobile revealProgress={mobilePhonesReveal} />
-            </div>
           </div>
         </div>
       </section>
@@ -290,6 +245,7 @@ export function Hero() {
       {/* Espace de scroll : 1 écran puis phase parallax avant la vidéo */}
       <div className="hidden h-dvh lg:block" aria-hidden />
       <div
+        id="hero-sentinel"
         ref={trackRef}
         className="hidden lg:block"
         style={{ height: `${PARALLAX_SCROLL_VH}vh` }}
