@@ -11,19 +11,13 @@ function PhoneMockup({
   className?: string;
 }) {
   return (
-    <div
-      className={`rounded-[46px] bg-[#1c1c1e] p-[6px] shadow-[0_28px_60px_-18px_rgba(0,0,0,0.75)] ring-1 ring-inset ring-white/[0.14] ${className}`}
-    >
-      <div className="overflow-hidden rounded-[40px] bg-black">
-        <img
-          src={src}
-          alt={alt}
-          width={505}
-          height={1024}
-          className="block h-auto w-full"
-        />
-      </div>
-    </div>
+    <img
+      src={src}
+      alt={alt}
+      width={505}
+      height={1024}
+      className={`block h-auto w-full ${className}`}
+    />
   );
 }
 
@@ -153,7 +147,7 @@ export function AppPresentationSection() {
           </div>
 
           <Reveal delay={120} className="w-full lg:justify-self-end">
-            <div className="relative mx-auto w-full max-w-[520px] rounded-3xl border border-gold/15 bg-[radial-gradient(120%_100%_at_50%_0%,#1a1610,#0a0807_70%)] px-4 py-10 sm:px-8 sm:py-12 lg:mx-0">
+            <div className="relative mx-auto w-full max-w-[520px] px-4 py-10 sm:px-8 sm:py-12 lg:mx-0">
               <div className="relative mx-auto flex max-w-[440px] items-end justify-center">
                 <div className="relative z-[2] w-[52%] max-w-[238px] shrink-0 -rotate-3">
                   <PhoneMockup

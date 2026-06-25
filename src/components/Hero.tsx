@@ -113,7 +113,17 @@ function parallaxStyle(parallax: HeroParallax): CSSProperties {
   };
 }
 
-function HeroMobileVisual() {
+function heroMobileEnter(introReady: boolean, delay: number) {
+  return introReady
+    ? `max-lg:animate-reveal-up-blur max-lg:[animation-delay:${delay}ms]`
+    : "max-lg:opacity-0";
+}
+
+function heroDesktopEnter(delay: number) {
+  return `lg:animate-reveal-up-blur lg:[animation-delay:${delay}ms]`;
+}
+
+function HeroMobileVisual({ introReady }: { introReady: boolean }) {
   return (
     <div
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden lg:hidden"
@@ -122,9 +132,16 @@ function HeroMobileVisual() {
       <img
         src="/images/hero-mobile-visual.png"
         alt=""
-        className="hero-mobile-visual absolute max-w-none select-none"
+        className={`hero-mobile-visual absolute max-w-none select-none ${
+          introReady
+            ? "max-lg:animate-hero-mobile-visual-in"
+            : "max-lg:opacity-0"
+        }`}
       />
-      <div className="hero-mobile-scrim" aria-hidden />
+      <div
+        className={`hero-mobile-scrim ${introReady ? "max-lg:animate-hero-mobile-scrim-in" : "max-lg:opacity-0"}`}
+        aria-hidden
+      />
     </div>
   );
 }
@@ -167,15 +184,15 @@ function HeroPhoneDesktop({
                   : "w-[400px] xl:w-[460px]"
               }`}
             />
-            <div className="hero-phone-fade" aria-hidden />
           </div>
         </div>
+        <div className="hero-phone-fade hero-phone-fade--desktop" aria-hidden />
       </div>
     </div>
   );
 }
 
-export function Hero() {
+export function Hero({ introReady }: { introReady: boolean }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const { parallax, progress } = useHeroParallax(trackRef);
 
@@ -183,36 +200,44 @@ export function Hero() {
     <>
       <section
         id="hero"
-        className="relative inset-x-0 top-0 z-0 flex min-h-dvh flex-col overflow-x-clip bg-bg px-4 pb-8 pt-24 sm:px-6 sm:pb-10 lg:fixed lg:h-dvh lg:overflow-hidden lg:px-8 lg:pb-0 lg:pt-28"
+        className="relative inset-x-0 top-0 z-0 flex flex-col overflow-x-clip bg-bg px-4 pb-12 pt-24 sm:px-6 sm:pb-14 lg:fixed lg:min-h-dvh lg:h-dvh lg:overflow-hidden lg:px-8 lg:pb-0 lg:pt-28"
       >
-        <HeroMobileVisual />
+        <HeroMobileVisual introReady={introReady} />
 
         <div
-          className="relative mx-auto flex h-full min-h-[calc(100dvh-6rem)] w-full max-w-7xl flex-1 flex-col lg:min-h-0"
+          className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col lg:h-full lg:min-h-0"
           style={parallaxStyle(parallax)}
         >
-          <div className="relative flex min-h-0 flex-1 flex-col">
+          <div className="relative flex flex-col lg:min-h-0 lg:flex-1">
             <HeroPhoneDesktop side="left" progress={progress} />
             <HeroPhoneDesktop side="right" progress={progress} />
 
-            <div className="hero-bottom-fade" aria-hidden />
+            <div className="hero-bottom-fade hidden lg:block" aria-hidden />
 
-            <div className="relative z-20 flex flex-1 flex-col justify-end lg:items-center lg:justify-center">
+            <div className="relative z-20 flex flex-col pt-[38vh] lg:flex-1 lg:items-center lg:justify-center lg:pt-0">
               <div className="flex w-full max-w-3xl flex-col items-start text-left lg:mx-auto lg:items-center lg:text-center">
-                <span className="label-accent animate-reveal-up-blur mb-5 [animation-delay:350ms]">
+                <span
+                  className={`label-accent mb-4 lg:mb-5 ${heroMobileEnter(introReady, 120)} ${heroDesktopEnter(350)}`}
+                >
                   Nouveauté
                 </span>
 
-                <h1 className="text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-                  <span className="animate-reveal-up-blur block [animation-delay:550ms]">
+                <h1 className="text-balance text-[2.25rem] font-medium leading-[1.08] tracking-tight sm:text-4xl lg:text-[3.5rem] lg:leading-[1.05]">
+                  <span
+                    className={`block ${heroMobileEnter(introReady, 240)} ${heroDesktopEnter(550)}`}
+                  >
                     La souplesse
                   </span>
-                  <span className="animate-reveal-up-blur text-gold-gradient block [animation-delay:900ms]">
+                  <span
+                    className={`text-gold-gradient block ${heroMobileEnter(introReady, 380)} ${heroDesktopEnter(900)}`}
+                  >
                     à portée de main.
                   </span>
                 </h1>
 
-                <p className="animate-reveal-up-blur mt-6 max-w-lg text-pretty text-base leading-relaxed text-muted-light [animation-delay:1250ms] sm:text-lg">
+                <p
+                  className={`mt-5 max-w-lg text-pretty text-sm leading-relaxed text-muted-light sm:mt-6 sm:text-base lg:text-lg ${heroMobileEnter(introReady, 520)} ${heroDesktopEnter(1250)}`}
+                >
                   Découvre Amplitude&nbsp;: une application 100&nbsp;% mobile et
                   100&nbsp;% progression, structurée avec la rigueur d&apos;un programme
                   fitness pour atteindre tous tes objectifs de souplesse et mobilité.
@@ -221,19 +246,21 @@ export function Hero() {
                 <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 lg:w-auto lg:flex-row lg:justify-center">
                   <a
                     href="#services"
-                    className="btn-primary animate-reveal-up-blur w-full [animation-delay:1650ms] lg:w-auto"
+                    className={`btn-primary w-full lg:w-auto ${heroMobileEnter(introReady, 660)} ${heroDesktopEnter(1650)}`}
                   >
                     Rejoindre Amplitude
                   </a>
                   <a
                     href="#services"
-                    className="btn-secondary animate-reveal-up-blur w-full [animation-delay:2050ms] lg:w-auto"
+                    className={`btn-secondary w-full lg:w-auto ${heroMobileEnter(introReady, 780)} ${heroDesktopEnter(2050)}`}
                   >
                     En savoir plus
                   </a>
                 </div>
 
-                <div className="animate-reveal-up-blur mt-8 [animation-delay:2350ms] sm:mt-10">
+                <div
+                  className={`mt-8 sm:mt-10 ${heroMobileEnter(introReady, 900)} ${heroDesktopEnter(2350)}`}
+                >
                   <SocialProof />
                 </div>
               </div>

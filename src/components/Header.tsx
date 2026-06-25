@@ -1,6 +1,5 @@
 import { useEffect, useId, useState } from "react";
 import { Logo } from "./Logo";
-import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#process", label: "La réalité" },
@@ -84,7 +83,6 @@ export function Header() {
             ))}
           </nav>
 
-          <ThemeToggle />
           <button
             type="button"
             className="nav-pill flex h-12 w-12 cursor-pointer items-center justify-center text-text lg:hidden"

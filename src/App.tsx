@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { VideoSection } from "./components/VideoSection";
@@ -17,13 +18,15 @@ import { StickyCtaBar } from "./components/StickyCtaBar";
 import { LoadingScreen } from "./components/LoadingScreen";
 
 export default function App() {
+  const [introReady, setIntroReady] = useState(false);
+
   return (
     <>
-      <LoadingScreen />
+      <LoadingScreen onComplete={() => setIntroReady(true)} />
       <div className="relative min-h-dvh overflow-x-clip bg-bg">
       <Header />
       <main className="relative">
-        <Hero />
+        <Hero introReady={introReady} />
         <div className="relative z-10 -mt-2 bg-bg sm:-mt-4">
           <VideoSection />
           <StatsSection />

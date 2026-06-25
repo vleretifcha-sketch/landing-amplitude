@@ -23,7 +23,7 @@ export function FinalCtaSection() {
           </p>
           <a
             href="#tarifs"
-            className="btn-primary mt-8 flex w-full justify-center sm:mt-10"
+            className="btn-primary mt-8 flex w-full justify-center sm:mt-10 lg:inline-flex lg:w-auto lg:px-10"
           >
             Je rejoins Amplitude
           </a>

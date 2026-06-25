@@ -44,10 +44,20 @@ export function FAQ() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="section-header">
-            <p className="label-accent">Des questions avant de te lancer ?</p>
-            <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
-              Je te réponds ici (ou sur @mylene_miletto)
+            <h2 className="text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              Une question, une réponse
             </h2>
+            <p className="mt-5 text-sm leading-[1.75] text-muted-light sm:mt-6 sm:text-base">
+              Je réponds à toutes tes questions ici, ou sur Instagram{" "}
+              <a
+                href="https://www.instagram.com/mylene_miletto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gold transition-opacity hover:opacity-80"
+              >
+                @mylene_miletto
+              </a>
+            </p>
           </div>
         </Reveal>
 

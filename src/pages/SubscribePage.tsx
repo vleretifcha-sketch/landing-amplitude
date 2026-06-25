@@ -1,5 +1,4 @@
 import { Logo } from "../components/Logo";
-import { ThemeToggle } from "../components/ThemeToggle";
 
 const features = [
   "Programme mensuel",
@@ -16,9 +15,8 @@ const stripePaymentLink =
 export function SubscribePage() {
   return (
     <div className="relative flex min-h-dvh flex-col bg-bg px-4 py-8 sm:px-6 sm:py-12">
-      <header className="mx-auto flex w-full max-w-lg items-center justify-between">
+      <header className="mx-auto w-full max-w-lg">
         <Logo className="h-7 w-auto" />
-        <ThemeToggle />
       </header>
 
       <main className="mx-auto flex w-full max-w-lg flex-1 flex-col justify-center py-10 sm:py-14">
