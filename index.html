@@ -7,7 +7,7 @@
       name="description"
       content="Une méthode premium de souplesse et mobilité. Moins d'entraînement. Plus de résultats."
     />
-    <title>Amplitude — Souplesse & mobilité</title>
+    <title>Amplitude ; Souplesse & mobilité</title>
     <script>
       (function () {
         var path = location.pathname.replace(/\/$/, "") || "/";
@@ -21,7 +21,21 @@
           url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
         }
 
-        window.location.replace(url);
+        function openDeepLink(target) {
+          function launch() {
+            var iframe = document.createElement("iframe");
+            iframe.style.cssText = "display:none;border:0;width:0;height:0";
+            iframe.src = target;
+            (document.body || document.documentElement).appendChild(iframe);
+            setTimeout(function () {
+              if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+            }, 2500);
+          }
+          if (document.body) launch();
+          else document.addEventListener("DOMContentLoaded", launch, { once: true });
+        }
+
+        openDeepLink(url);
 
         setTimeout(function () {
           var fallback = document.getElementById("fallback");

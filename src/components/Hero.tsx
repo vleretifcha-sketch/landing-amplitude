@@ -200,7 +200,7 @@ export function Hero({ introReady }: { introReady: boolean }) {
     <>
       <section
         id="hero"
-        className="relative inset-x-0 top-0 z-0 flex flex-col overflow-x-clip bg-bg px-4 pb-12 pt-24 sm:px-6 sm:pb-14 lg:fixed lg:min-h-dvh lg:h-dvh lg:overflow-hidden lg:px-8 lg:pb-0 lg:pt-28"
+        className="relative inset-x-0 top-0 z-0 flex flex-col overflow-x-clip bg-bg px-4 pb-12 pt-6 sm:px-6 sm:pb-14 lg:fixed lg:min-h-dvh lg:h-dvh lg:overflow-hidden lg:px-8 lg:pb-0 lg:pt-28"
       >
         <HeroMobileVisual introReady={introReady} />
 
@@ -226,12 +226,12 @@ export function Hero({ introReady }: { introReady: boolean }) {
                   <span
                     className={`block ${heroMobileEnter(introReady, 240)} ${heroDesktopEnter(550)}`}
                   >
-                    La souplesse
+                    Deviens souple, mobile et fort(e) ;
                   </span>
                   <span
-                    className={`text-gold-gradient block ${heroMobileEnter(introReady, 380)} ${heroDesktopEnter(900)}`}
+                    className={`block ${heroMobileEnter(introReady, 380)} ${heroDesktopEnter(900)}`}
                   >
-                    à portée de main.
+                    sans te blesser.
                   </span>
                 </h1>
 

@@ -1,9 +1,21 @@
 import { Reveal } from "./Reveal";
 
-const testimonials = Array.from({ length: 31 }, (_, index) => ({
-  src: `/images/testimonials/testimonial-${String(index + 1).padStart(2, "0")}.png`,
-  alt: `Témoignage d'élève Amplitude ${index + 1}`,
-}));
+const testimonialSources: Record<number, string> = {
+  8: "Reçu sur WhatsApp",
+  19: "Reçu sur WhatsApp",
+  25: "Reçu sur Facebook",
+  27: "Reçu sur WhatsApp",
+};
+
+const testimonials = Array.from({ length: 31 }, (_, index) => {
+  const number = index + 1;
+
+  return {
+    src: `/images/testimonials/testimonial-${String(number).padStart(2, "0")}.png`,
+    alt: `Témoignage d'élève Amplitude ${number}`,
+    source: testimonialSources[number] ?? "Reçu sur Instagram",
+  };
+});
 
 export function TestimonialsSection() {
   return (
@@ -21,10 +33,7 @@ export function TestimonialsSection() {
             </h2>
             <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
               +1 500 élèves ont atteint leurs objectifs de souplesse et de
-              mobilité.
-            </p>
-            <p className="mt-4 text-sm leading-[1.75] text-muted-light sm:text-base">
-              Parce qu&apos;ils suivent la bonne méthode, avec constance et
+              mobilité. Parce qu&apos;ils suivent la bonne méthode, avec constance et
               régularité.
             </p>
           </div>
@@ -40,7 +49,7 @@ export function TestimonialsSection() {
                     className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
                   />
                   <span className="text-xs font-medium text-muted-light">
-                    Reçu sur Instagram
+                    {testimonial.source}
                   </span>
                 </div>
                 <img

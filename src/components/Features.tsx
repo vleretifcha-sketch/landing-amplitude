@@ -18,7 +18,7 @@ const programs = [
     duration: "6 semaines",
     subtitle: "La répétition crée la progression",
     description:
-      "Un objectif, une direction. Chaque semaine, ton amplitude gagne des degrés — comme une charge qui monte à la muscu. Tu sais exactement quoi faire, et tu le mesures.",
+      "Un objectif, une direction. Chaque semaine, ton amplitude gagne des degrés ; comme une charge qui monte à la muscu. Tu sais exactement quoi faire, et tu le mesures.",
     image: "/images/programs/split.png",
     imageAlt: "Grand écart latéral",
   },
@@ -49,7 +49,7 @@ export function Features() {
             </h2>
             <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
               Chaque mois, un nouveau cours ou programme signature construit autour
-              d&apos;un objectif précis. Pas une bibliothèque infinie — une direction
+              d&apos;un objectif précis. Pas une bibliothèque infinie ; une direction
               claire, à chaque fois.
             </p>
           </div>

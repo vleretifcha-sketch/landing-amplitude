@@ -4,7 +4,7 @@ const tools = [
   {
     title: "Mobilité active pré-training",
     description:
-      "Prépare ton corps avant ta séance de sport — haut du corps, jambes.",
+      "Prépare ton corps avant ta séance de sport ; haut du corps, jambes.",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M13 2 4.5 13h6L11 22l8.5-11h-6z" />
@@ -72,9 +72,10 @@ export function Services() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="max-w-3xl">
-            <p className="label-accent">Fonctionnalités</p>
+            <p className="label-accent">Outils</p>
             <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
-              Tout pour progresser
+              <span className="block">Des fonctionnalités avancées</span>
+              <span className="block">au service de ta progression</span>
             </h2>
           </div>
         </Reveal>

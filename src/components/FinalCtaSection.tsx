@@ -13,8 +13,8 @@ export function FinalCtaSection() {
       <div className="mx-auto max-w-3xl text-center">
         <Reveal>
           <h2 className="text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Prêt(e) à atteindre tous tes objectifs de souplesse et de mobilité
-            ?
+            Prêt(e) à atteindre tous tes objectifs{" "}
+            <span className="text-gold">de souplesse et de mobilité ?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
             L&apos;offre de lancement court jusqu&apos;au{" "}

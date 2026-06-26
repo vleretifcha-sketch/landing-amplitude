@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
+import { buildPaymentSuccessUrl, openDeepLink } from "../lib/deepLink";
+
+const deepLinkUrl = buildPaymentSuccessUrl();
 
 export function PaymentSuccessPage() {
   const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     document.title = "Retour vers Amplitude";
-
-    const params = new URLSearchParams(window.location.search);
-    let url = params.get("app_success") || "amplitude://payment-success";
-
-    if (!params.get("app_success") && params.toString()) {
-      url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
-    }
-
-    window.location.replace(url);
+    openDeepLink(deepLinkUrl);
 
     const timer = setTimeout(() => setShowFallback(true), 2000);
     return () => clearTimeout(timer);
@@ -38,7 +33,14 @@ export function PaymentSuccessPage() {
       <p>Retour vers l&apos;app Amplitude…</p>
       <p id="fallback" style={{ display: showFallback ? "block" : "none" }}>
         Si l&apos;app ne s&apos;ouvre pas,{" "}
-        <a href="amplitude://payment-success" style={{ color: "#EEDC9A" }}>
+        <a
+          href={deepLinkUrl}
+          style={{ color: "#EEDC9A" }}
+          onClick={(e) => {
+            e.preventDefault();
+            openDeepLink(deepLinkUrl);
+          }}
+        >
           cliquez ici
         </a>
         .

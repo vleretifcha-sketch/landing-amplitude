@@ -1,0 +1,355 @@
+POLITIQUE DE CONFIDENTIALITÉ
+Application Amplitude
+Version applicable à compter du : mardi, 30 juin 2026
+Dernière mise à jour : mardi, 30 juin 2026
+⸻
+Article 1 – Objet
+La présente Politique de confidentialité a pour objet d’informer les utilisateurs de l’application
+Amplitude et du site internet www.amplitudeapp.fr sur les modalités de collecte, d’utilisation,
+de conservation, de protection et de suppression de leurs données personnelles.
+Amplitude accorde une importance particulière à la protection de la vie privée de ses utilisateurs
+et s’engage à traiter les données personnelles conformément :
+●
+●
+●
+au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) ;
+à la loi Informatique et Libertés modifiée ;
+à toute réglementation française et européenne applicable en matière de protection des
+données.
+Cette politique s’applique à toute personne utilisant le site internet ou l’application Amplitude.
+⸻
+Article 2 – Responsable du traitement
+Le responsable du traitement des données personnelles est :
+Mylène Miletto
+SIRET : 8388281500022
+Site internet :
+https://www.amplitudeapp.fr
+Adresse électronique :
+contact@amplitudeapp.fr
+Pour toute question relative au traitement de vos données personnelles ou à l’exercice de vos
+droits, vous pouvez contacter l’Éditeur à cette adresse.
+⸻
+Article 3 – Données personnelles collectées
+Selon les fonctionnalités utilisées, Amplitude est susceptible de collecter les catégories de
+données suivantes.
+Données d’identification
+●
+●
+●
+●
+●
+prénom ;
+nom ;
+adresse électronique ;
+mot de passe (stocké sous une forme sécurisée et chiffrée, jamais en clair) ;
+photographie de profil lorsque l’utilisateur choisit d’en ajouter une.
+Données relatives au profil
+Lors de la création ou de la personnalisation du compte, l’utilisateur peut renseigner :
+●
+●
+●
+son niveau de pratique ;
+ses objectifs personnels ;
+certaines préférences d’utilisation.
+Données relatives à l’utilisation de l’application
+Afin d’assurer le fonctionnement du service et le suivi de la progression, Amplitude peut
+enregistrer :
+●
+●
+●
+●
+●
+●
+les programmes suivis ;
+les séances réalisées ;
+les contenus consultés ;
+la progression dans les programmes ;
+les favoris ;
+les interactions avec les fonctionnalités de l’application.
+Données publiées dans la communauté
+Lorsque l’utilisateur participe à l’espace communautaire, les données qu’il choisit de publier
+peuvent être visibles par les autres membres, notamment :
+●
+●
+●
+●
+●
+son nom ou prénom affiché sur le profil ;
+sa photographie de profil ;
+ses publications ;
+ses photographies ;
+ses commentaires.
+L’utilisateur demeure libre de supprimer les contenus qu’il publie, sous réserve des obligations
+légales de conservation et des contraintes techniques.
+Données relatives aux abonnements
+Dans le cadre de la gestion des abonnements, les informations suivantes peuvent être
+enregistrées :
+●
+●
+●
+●
+le type d’abonnement souscrit ;
+la date de souscription ;
+le statut de l’abonnement ;
+l’historique des paiements.
+Les données bancaires ne sont jamais conservées par Amplitude.
+Les paiements sont exclusivement traités par Stripe, conformément à ses propres conditions
+d’utilisation et à sa politique de confidentialité.
+⸻
+Article 4 – Finalités des traitements
+Les données personnelles sont collectées uniquement pour des finalités déterminées, explicites
+et légitimes.
+Elles permettent notamment :
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+de créer et gérer le compte utilisateur ;
+de permettre l’accès aux contenus de l’application ;
+de gérer les abonnements et les paiements ;
+d’assurer le suivi de la progression ;
+de personnaliser l’expérience utilisateur ;
+de permettre le fonctionnement de l’espace communautaire ;
+d’envoyer les notifications liées aux entraînements ou au fonctionnement de l’application ;
+de répondre aux demandes adressées au support ;
+d’assurer la sécurité des comptes ;
+de prévenir les utilisations frauduleuses ;
+de respecter les obligations légales de l’Éditeur.
+Les données ne sont jamais utilisées à des fins incompatibles avec ces finalités.
+⸻
+Article 5 – Bases légales des traitements
+Conformément au RGPD, chaque traitement de données personnelles repose sur une base
+légale.
+Les traitements réalisés par Amplitude reposent notamment sur :
+●
+●
+●
+●
+l’exécution du contrat conclu avec l’utilisateur (création du compte, accès aux contenus,
+gestion des abonnements) ;
+le respect d’une obligation légale ;
+l’intérêt légitime de l’Éditeur (sécurisation de l’application, prévention de la fraude,
+amélioration des services, modération de la communauté) ;
+le consentement de l’utilisateur lorsqu’il est requis, notamment pour certaines
+communications commerciales ou fonctionnalités facultatives.
+Lorsque le traitement repose sur le consentement, celui-ci peut être retiré à tout moment sans
+remettre en cause la licéité des traitements réalisés avant ce retrait.
+⸻
+Article 6 – Caractère obligatoire ou facultatif des données
+Certaines données sont indispensables au fonctionnement de l’application, notamment :
+●
+●
+●
+l’adresse électronique ;
+le mot de passe ;
+le prénom ou le nom affiché.
+L’absence de ces informations peut empêcher la création d’un compte ou l’accès aux services.
+Les autres données, telles que la photographie de profil, les objectifs ou le niveau de pratique,
+sont facultatives, sauf indication contraire lors de leur collecte.
+Article 7 – Destinataires des données personnelles
+Les données personnelles collectées sont destinées exclusivement à l’Éditeur ainsi qu’aux
+personnes habilitées à les traiter dans le cadre de leurs fonctions.
+Elles peuvent également être transmises, dans la stricte mesure nécessaire, à des prestataires
+intervenant pour le compte de l’Éditeur, notamment pour :
+●
+●
+●
+l’hébergement de l’application et des données ;
+la gestion des paiements via Stripe ;
+l’envoi de courriers électroniques ;
+●
+●
+l’assistance technique et la maintenance de l’application ;
+la sécurisation des systèmes informatiques.
+Ces prestataires agissent uniquement sur instruction de l’Éditeur et sont tenus à une obligation
+de confidentialité ainsi qu’au respect de la réglementation applicable en matière de protection
+des données personnelles.
+Les données personnelles ne sont ni vendues, ni louées, ni cédées à des tiers à des fins
+commerciales.
+⸻
+Article 8 – Durée de conservation des données
+Les données personnelles sont conservées uniquement pendant la durée nécessaire à la
+réalisation des finalités pour lesquelles elles ont été collectées ou afin de satisfaire aux
+obligations légales applicables.
+À titre indicatif :
+●
+●
+●
+●
+les données du compte utilisateur sont conservées pendant toute la durée d’utilisation du
+compte ;
+les données relatives aux abonnements sont conservées pendant la durée nécessaire à
+leur gestion ainsi qu’au respect des obligations comptables et fiscales ;
+les publications de l’espace communautaire sont conservées jusqu’à leur suppression par
+l’utilisateur ou jusqu’à la suppression de son compte, sous réserve des obligations
+légales ;
+certaines données peuvent être conservées sous forme d’archives lorsque la loi l’impose
+ou afin de permettre l’exercice ou la défense de droits en justice.
+À l’issue des durées applicables, les données sont supprimées ou anonymisées.
+⸻
+Article 9 – Sécurité des données
+L’Éditeur met en œuvre des mesures techniques et organisationnelles appropriées afin d’assurer
+un niveau de sécurité adapté aux risques liés au traitement des données personnelles.
+Ces mesures ont notamment pour objectif de protéger les données contre :
+●
+●
+la destruction accidentelle ou illicite ;
+la perte ;
+●
+●
+●
+l’altération ;
+la divulgation non autorisée ;
+l’accès non autorisé.
+L’Éditeur veille à sensibiliser les personnes autorisées à traiter les données au respect de leur
+confidentialité.
+Malgré toutes les précautions mises en œuvre, aucun système informatique ne peut garantir une
+sécurité absolue.
+En cas de violation de données présentant un risque pour les droits et libertés des utilisateurs,
+l’Éditeur s’engage à respecter les obligations de notification prévues par la réglementation
+applicable.
+⸻
+Article 10 – Les droits des utilisateurs
+Conformément au RGPD, chaque utilisateur dispose des droits suivants, sous réserve des
+conditions prévues par la réglementation :
+●
+●
+●
+●
+●
+●
+●
+droit d’accès à ses données personnelles ;
+droit de rectification des données inexactes ou incomplètes ;
+droit à l’effacement (« droit à l’oubli ») lorsque les conditions légales sont réunies ;
+droit à la limitation du traitement ;
+droit d’opposition à certains traitements ;
+droit à la portabilité des données lorsque celui-ci est applicable ;
+droit de retirer son consentement lorsque le traitement repose sur cette base juridique.
+Ces droits peuvent être exercés gratuitement en adressant une demande à :
+contact@amplitudeapp.fr
+L’Éditeur pourra demander un justificatif d’identité lorsque cela est nécessaire afin de protéger
+les données personnelles concernées.
+Une réponse sera apportée dans les délais prévus par la réglementation applicable.
+⸻
+Article 11 – Suppression du compte et des données
+L’utilisateur peut demander à tout moment la suppression de son compte.
+Cette demande peut être effectuée directement depuis l’application lorsque cette fonctionnalité
+est disponible ou en contactant l’Éditeur à l’adresse suivante :
+contact@amplitudeapp.fr
+La suppression du compte entraîne, sous réserve des obligations légales de conservation :
+●
+●
+●
+la désactivation de l’accès à l’application ;
+la suppression ou l’anonymisation des données personnelles associées au compte ;
+la suppression du profil utilisateur.
+Certaines données peuvent néanmoins être conservées lorsque leur conservation est nécessaire
+au respect d’une obligation légale, à la prévention de la fraude ou à la défense des droits de
+l’Éditeur.
+⸻
+Article 12 – Transferts de données
+Les données personnelles sont, dans la mesure du possible, hébergées et traitées au sein de
+l’Espace économique européen.
+Lorsque certains prestataires sont susceptibles de traiter des données en dehors de cet espace,
+l’Éditeur veille à ce que ces transferts soient encadrés par des garanties appropriées
+conformément au RGPD, notamment au moyen de clauses contractuelles types approuvées par
+la Commission européenne ou de tout autre mécanisme reconnu par la réglementation.
+⸻
+Article 13 – Réclamation auprès de l’autorité de contrôle
+Si un utilisateur estime que le traitement de ses données personnelles n’est pas conforme à la
+réglementation applicable, il est invité à contacter en priorité l’Éditeur afin de rechercher une
+solution amiable.
+Il conserve également le droit d’introduire une réclamation auprès de l’autorité de contrôle
+compétente.
+Pour les traitements réalisés en France, cette autorité est la Commission Nationale de
+l’Informatique et des Libertés (CNIL).
+Article 14 – Cookies et technologies similaires
+Le site internet d’Amplitude peut utiliser des cookies ou technologies similaires afin d’améliorer
+l’expérience utilisateur, d’assurer le bon fonctionnement du site et, le cas échéant, de mesurer
+son audience.
+Un cookie est un petit fichier enregistré sur le terminal de l’utilisateur lors de sa navigation.
+Les cookies utilisés peuvent notamment permettre :
+●
+●
+●
+●
+d’assurer le fonctionnement technique du site ;
+de mémoriser certaines préférences de navigation ;
+de sécuriser la connexion au compte utilisateur ;
+d’établir des statistiques de fréquentation, sous réserve du consentement de l’utilisateur
+lorsque celui-ci est requis.
+Lorsque la réglementation l’impose, le consentement de l’utilisateur est recueilli avant le dépôt
+des cookies non strictement nécessaires au fonctionnement du site.
+L’utilisateur peut à tout moment modifier ses préférences en matière de cookies.
+Une Politique de cookies dédiée pourra compléter les présentes dispositions.
+⸻
+Article 15 – Confidentialité des identifiants
+Chaque utilisateur est responsable de la confidentialité des informations lui permettant
+d’accéder à son compte.
+Il lui appartient notamment :
+●
+●
+●
+●
+de conserver son mot de passe confidentiel ;
+de choisir un mot de passe robuste ;
+de ne jamais communiquer ses identifiants à un tiers ;
+de signaler immédiatement toute utilisation frauduleuse ou tout accès non autorisé à son
+compte.
+L’Éditeur ne pourra être tenu responsable des conséquences résultant d’un manquement de
+l’utilisateur à ces obligations.
+⸻
+Article 16 – Protection des mineurs
+L’application Amplitude peut être utilisée par des personnes mineures sous la responsabilité et
+avec l’autorisation préalable de leur représentant légal.
+Les représentants légaux sont invités à accompagner les mineurs dans leur utilisation de
+l’application et à veiller aux informations qu’ils choisissent de rendre publiques, notamment au
+sein de l’espace communautaire.
+Amplitude ne collecte pas volontairement de données personnelles auprès de mineurs en
+violation de la réglementation applicable.
+⸻
+Article 17 – Modification de la présente Politique de confidentialité
+La présente Politique de confidentialité peut être modifiée afin de tenir compte :
+●
+●
+●
+●
+d’une évolution législative ou réglementaire ;
+d’une évolution des fonctionnalités de l’application ;
+d’une évolution des traitements réalisés ;
+d’une évolution des prestataires techniques utilisés.
+Lorsque les modifications sont substantielles, les utilisateurs en seront informés par tout moyen
+approprié avant leur entrée en vigueur.
+La date de dernière mise à jour figurant en tête du présent document sera modifiée en
+conséquence.
+⸻
+Article 18 – Contact
+Pour toute question relative à la présente Politique de confidentialité ou à l’exercice de vos
+droits, vous pouvez contacter :
+Mylène Miletto
+SIRET : 8388281500022
+Site internet :
+https://www.amplitudeapp.fr
+Adresse électronique :
+contact@amplitudeapp.fr
+⸻
+Article 19 – Droit applicable
+La présente Politique de confidentialité est régie par le droit français.
+Elle est interprétée conformément au Règlement Général sur la Protection des Données (RGPD),
+à la loi Informatique et Libertés ainsi qu’à toute réglementation européenne ou nationale
+applicable en matière de protection des données personnelles.
+⸻
+Article 20 – Entrée en vigueur
+La présente Politique de confidentialité entre en vigueur à compter de sa date de publication sur
+le site internet et l’application Amplitude.
+Elle demeure applicable jusqu’à son remplacement par une version ultérieure.
+Les utilisateurs sont invités à la consulter régulièrement afin de prendre connaissance de toute
+éventuelle mise à jour.

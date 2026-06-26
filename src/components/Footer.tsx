@@ -5,10 +5,19 @@ const navLinks = [
   { href: "#process", label: "La réalité" },
   { href: "#app", label: "L'app" },
   { href: "#fonctionnalites", label: "Programmes" },
-  { href: "#services", label: "Fonctionnalités" },
+  { href: "#services", label: "Outils" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#video", label: "Vidéo" },
   { href: "#faq", label: "FAQ" },
+];
+
+const legalLinks = [
+  { href: "/cgu", label: "CGU" },
+  { href: "/politique-de-confidentialite", label: "Confidentialité" },
+  { href: "/mentions-legales", label: "Mentions légales" },
+  { href: "/politique-cookies", label: "Cookies" },
+  { href: "/charte-communaute", label: "Charte communauté" },
+  { href: "/politique-suppression-compte", label: "Suppression de compte" },
 ];
 
 const socialLinks = [
@@ -37,9 +46,9 @@ export function Footer() {
     <footer className="relative z-10 border-t border-border bg-bg px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
             <div className="max-w-sm">
-              <a href="#" aria-label="Amplitude — accueil">
+              <a href="#" aria-label="Amplitude ; accueil">
                 <Logo className="h-6 w-auto" />
               </a>
               <p className="mt-4 text-sm leading-relaxed text-muted-light">
@@ -64,14 +73,17 @@ export function Footer() {
               </div>
             </div>
 
-            <nav aria-label="Navigation pied de page">
-              <p className="label-accent mb-4">Navigation</p>
-              <ul className="space-y-2.5">
+            <nav
+              aria-label="Navigation pied de page"
+              className="card-dark w-full p-5 sm:p-6 lg:w-auto lg:min-w-[20rem] lg:shrink-0"
+            >
+              <p className="label-accent mb-5">Navigation</p>
+              <ul className="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-x-10 lg:gap-x-12">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted-light transition-colors duration-200 hover:text-gold"
+                      className="block rounded-xl px-3 py-2.5 text-sm font-medium text-muted-light transition-colors duration-200 hover:bg-gold-subtle hover:text-gold"
                     >
                       {link.label}
                     </a>
@@ -83,9 +95,23 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={150} className="mt-12 border-t border-border pt-8">
-          <p className="text-center text-sm text-muted sm:text-left">
-            © {new Date().getFullYear()} Amplitude. Tous droits réservés.
-          </p>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-center text-sm text-muted sm:text-left">
+              © {new Date().getFullYear()} Amplitude. Tous droits réservés.
+            </p>
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-muted-light transition-colors duration-200 hover:text-gold"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </footer>

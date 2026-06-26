@@ -2,9 +2,9 @@ import { Reveal } from "./Reveal";
 
 const paragraphs = [
   "Je ne suis pas née souple. On m'a même dit que je ne le serais jamais, et pourtant…",
-  "Passionnée par le mouvement depuis plus de 10 ans, j'ai construit mon expertise à travers la musculation, la pole dance et les disciplines aériennes — jusqu'à la souplesse et la mobilité, que j'ai enseignées et dont j'ai fait mon métier. En 2019, j'ai fondé ma propre école et suite à la fermeture COVID, j'ai eu envie d'une version digitale.",
-  "On m'a dit que je n'étais génétiquement pas souple.. Les méthodes que j'ai pu exercer ne faisaient qu'une chose : me blesser — parce qu'elles sont pensées pour des corps déjà souples, pas pour le mien. Alors j'ai construit ma méthode, une méthode pragmatique & progressive basée sur le meilleur de mes entraînements. Aujourd'hui, j'ai mes deux écarts latéraux, mon facial, mes oversplits. Et je ne me blesse plus.",
-  "Ma mission : permettre à chacun de développer un corps plus mobile, plus souple et plus performant — à son rythme, depuis chez soi ou sa salle de sport préférée.",
+  "Passionnée par le mouvement depuis plus de 10 ans, j'ai construit mon expertise à travers la musculation, la pole dance et les disciplines aériennes ; jusqu'à la souplesse et la mobilité, que j'ai enseignées et dont j'ai fait mon métier. En 2019, j'ai fondé ma propre école et suite à la fermeture COVID, j'ai eu envie d'une version digitale.",
+  "On m'a dit que je n'étais génétiquement pas souple.. Les méthodes que j'ai pu exercer ne faisaient qu'une chose : me blesser ; parce qu'elles sont pensées pour des corps déjà souples, pas pour le mien. Alors j'ai construit ma méthode, une méthode pragmatique & progressive basée sur le meilleur de mes entraînements. Aujourd'hui, j'ai mes deux écarts latéraux, mon facial, mes oversplits. Et je ne me blesse plus.",
+  "Ma mission : permettre à chacun de développer un corps plus mobile, plus souple et plus performant ; à son rythme, depuis chez soi ou sa salle de sport préférée.",
 ];
 
 export function FounderSection() {

@@ -4,11 +4,11 @@ import { Reveal } from "./Reveal";
 const faqs = [
   {
     q: "En quoi Amplitude est différente des autres applis de souplesse ?",
-    a: "La plupart des applis te balancent une bibliothèque de vidéos et te laissent te débrouiller. Amplitude te donne un vrai programme : un objectif, une progression structurée semaine après semaine, et la logique de la muscu appliquée à la souplesse. Tu sais toujours quoi faire — et tu mesures tes progrès.",
+    a: "La plupart des applis te balancent une bibliothèque de vidéos et te laissent te débrouiller. Amplitude te donne un vrai programme : un objectif, une progression structurée semaine après semaine, et la logique de la muscu appliquée à la souplesse. Tu sais toujours quoi faire ; et tu mesures tes progrès.",
   },
   {
     q: "Faut-il s'entraîner tous les jours ?",
-    a: "Non, quelques séances par semaine suffisent. C'est la régularité qui fait gagner des degrés, pas l'acharnement quotidien — et ça tient dans un planning de sportif déjà bien rempli.",
+    a: "Non, quelques séances par semaine suffisent. C'est la régularité qui fait gagner des degrés, pas l'acharnement quotidien ; et ça tient dans un planning de sportif déjà bien rempli.",
   },
   {
     q: "Je suis débutant(e) / très raide, est-ce que ça marche ?",
@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     q: "Combien de temps pour voir des résultats ?",
-    a: "Les premiers degrés gagnés se voient en quelques semaines chez les élèves réguliers — et tu les mesures dans l'app. Pas de délai magique : c'est la régularité qui parle. Les avant/après de cette page se jouent sur 2 à 3 mois.",
+    a: "Les premiers degrés gagnés se voient en quelques semaines chez les élèves réguliers ; et tu les mesures dans l'app. Pas de délai magique : c'est la régularité qui parle. Les avant/après de cette page se jouent sur 2 à 3 mois.",
   },
   {
     q: "Pourquoi pas d'abonnement au mois pour le lancement ?",
-    a: "Parce que la souplesse se construit sur la durée — un mois ne suffit pas à la transformer. La formule annuelle te met dans les vraies conditions de progresser, et au tarif de lancement elle revient à environ 12 €/mois. Un mensuel pourra arriver plus tard, mais pas pour l'ouverture.",
+    a: "Parce que la souplesse se construit sur la durée ; un mois ne suffit pas à la transformer. La formule annuelle te met dans les vraies conditions de progresser, et au tarif de lancement elle revient à environ 12 €/mois. Un mensuel pourra arriver plus tard, mais pas pour l'ouverture.",
   },
   {
     q: "Et si ça ne me convient pas ?",

@@ -25,12 +25,12 @@ const highlights = [
   {
     title: "Des cours guidés en mobilité et souplesse active et passive",
     description:
-      "Le cœur de la méthode : coaché en vidéo — respiration, alignement, amplitude.",
+      "Le cœur de la méthode : coaché en vidéo ; respiration, alignement, amplitude.",
   },
   {
     title: "La logique de progression de la muscu",
     description:
-      "Structure, répétition, une amplitude qui gagne des degrés — appliquée à des séances de mobilité.",
+      "Structure, répétition, une amplitude qui gagne des degrés ; appliquée à des séances de mobilité.",
   },
   {
     title: "Un programme ciblé par objectif",
@@ -83,7 +83,7 @@ export function AppPresentationSection() {
               </h2>
               <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-light sm:mt-7 sm:text-base">
                 L&apos;aboutissement de 10 ans de pratique, d&apos;erreurs et
-                d&apos;enseignement — réuni dans une appli pensée pour tous : du
+                d&apos;enseignement ; réuni dans une appli pensée pour tous : du
                 télétravailleur sédentaire jusqu&apos;aux sportifs
                 professionnels.
               </p>
@@ -152,13 +152,13 @@ export function AppPresentationSection() {
                 <div className="relative z-[2] w-[52%] max-w-[238px] shrink-0 -rotate-3">
                   <PhoneMockup
                     src="/images/app/home.png"
-                    alt="Amplitude — accueil"
+                    alt="Amplitude ; accueil"
                   />
                 </div>
                 <div className="relative z-[1] -ml-[32%] mb-6 w-[46%] max-w-[210px] shrink-0 rotate-3 sm:-ml-[34%]">
                   <PhoneMockup
                     src="/images/app/methods.png"
-                    alt="Amplitude — méthodes"
+                    alt="Amplitude ; méthodes"
                   />
                 </div>
               </div>

@@ -5,7 +5,7 @@ const links = [
   { href: "#process", label: "La réalité" },
   { href: "#app", label: "L'app" },
   { href: "#fonctionnalites", label: "Programmes" },
-  { href: "#services", label: "Fonctionnalités" },
+  { href: "#services", label: "Outils" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -57,12 +57,12 @@ export function Header() {
     <>
       <div className="top-scroll-fade" aria-hidden />
 
-      <header className="fixed top-0 right-0 left-0 z-50 px-4 pt-5 sm:px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+      <header className="relative z-[1] right-0 left-0 px-4 pt-5 sm:px-6">
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-4">
         <a
           href="#"
           className="animate-reveal-down shrink-0 cursor-pointer [animation-delay:0ms]"
-          aria-label="Amplitude — accueil"
+          aria-label="Amplitude ; accueil"
         >
           <Logo />
         </a>
@@ -108,7 +108,7 @@ export function Header() {
       />
 
       <nav
-        className={`nav-pill fixed top-[5.25rem] right-4 left-4 z-50 flex flex-col gap-1 p-2 transition-all duration-300 sm:right-6 sm:left-6 lg:hidden ${
+        className={`nav-pill fixed top-[7.5rem] right-4 left-4 z-50 flex flex-col gap-1 p-2 transition-all duration-300 sm:right-6 sm:left-6 lg:hidden ${
           menuOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0"

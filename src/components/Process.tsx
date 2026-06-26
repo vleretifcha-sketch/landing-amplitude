@@ -14,7 +14,7 @@ const steps = [
   {
     num: 3,
     title: "Parce que la vraie souplesse est une souplesse forte.",
-    desc: "Gagner de l'amplitude ne sert à rien si tu n'as pas la force de la contrôler. C'est tout l'enjeu de la mobilité : être souple et solide sur toute ton amplitude. C'est ce qui rend tes progrès durables — et ce qui t'évite de te blesser.",
+    desc: "Gagner de l'amplitude ne sert à rien si tu n'as pas la force de la contrôler. C'est tout l'enjeu de la mobilité : être souple et solide sur toute ton amplitude. C'est ce qui rend tes progrès durables ; et ce qui t'évite de te blesser.",
   },
 ];
 
@@ -26,14 +26,17 @@ export function Process() {
           <div className="max-w-3xl">
             <p className="label-accent">La réalité</p>
             <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
-              La souplesse{" "}
-              <span className="text-gold">n&apos;est pas un don.</span>
+              <span className="block">
+                La souplesse{" "}
+                <span className="text-gold">n&apos;est pas un don.</span>
+              </span>
+              <span className="block">C&apos;est une capacité qui se travaille</span>
+              <span className="block">; à tout âge et à tout niveau.</span>
             </h2>
             <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
-              C&apos;est une capacité qui se travaille — à tout âge et à tout niveau.
               On t&apos;a fait croire que la souplesse était une question de chance :
               on l&apos;a de naissance, ou jamais. C&apos;est faux. La souplesse et la
-              mobilité suivent exactement les mêmes lois que la force — et comme un
+              mobilité suivent exactement les mêmes lois que la force ; et comme un
               muscle, ça se construit.
             </p>
           </div>
