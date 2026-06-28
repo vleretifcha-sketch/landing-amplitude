@@ -245,7 +245,7 @@ export function Hero({ introReady }: { introReady: boolean }) {
 
                 <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 lg:w-auto lg:flex-row lg:justify-center">
                   <a
-                    href="#services"
+                    href="#tarifs"
                     className={`btn-primary w-full lg:w-auto ${heroMobileEnter(introReady, 660)} ${heroDesktopEnter(1650)}`}
                   >
                     Rejoindre Amplitude

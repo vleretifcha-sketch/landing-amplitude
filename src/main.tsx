@@ -5,7 +5,10 @@ import { SubscribePage } from "./pages/SubscribePage";
 import { PaymentSuccessPage } from "./pages/PaymentSuccessPage";
 import { LegalDocumentPage } from "./pages/LegalDocumentPage";
 import { isLegalPath } from "./lib/legalRoutes";
+import { persistPaymentReturnParams } from "./lib/deepLink";
 import "./index.css";
+
+persistPaymentReturnParams();
 
 const path = window.location.pathname.replace(/\/$/, "") || "/";
 

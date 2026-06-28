@@ -13,6 +13,7 @@ const navLinks = [
 
 const legalLinks = [
   { href: "/cgu", label: "CGU" },
+  { href: "/cgv", label: "CGV" },
   { href: "/politique-de-confidentialite", label: "Confidentialité" },
   { href: "/mentions-legales", label: "Mentions légales" },
   { href: "/politique-cookies", label: "Cookies" },

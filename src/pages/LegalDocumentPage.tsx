@@ -10,6 +10,11 @@ const documents: Record<string, LegalDocumentMeta> = {
     title: "Conditions Générales d'Utilisation (CGU)",
     subtitle: "Application Amplitude ; Version applicable à compter du mardi 30 juin 2026",
   },
+  cgv: {
+    file: "/legal/cgv.txt",
+    title: "Conditions Générales de Vente (CGV)",
+    subtitle: "Application Amplitude ; Version applicable à compter du mardi 30 juin 2026",
+  },
   privacy: {
     file: "/legal/politique-de-confidentialite.txt",
     title: "Politique de confidentialité",

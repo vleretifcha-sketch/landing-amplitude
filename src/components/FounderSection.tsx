@@ -21,7 +21,7 @@ export function FounderSection() {
               alt="Mylène, fondatrice d'Amplitude"
               width={460}
               height={660}
-              className="mx-auto aspect-[4/5] max-h-[17.5rem] w-full max-w-[460px] rounded-3xl border border-border object-cover object-[50%_35%] sm:max-h-[19rem] sm:aspect-[10/14] lg:mx-0 lg:max-h-none lg:aspect-[10/15]"
+              className="mx-auto h-auto w-full max-w-[460px] rounded-3xl border border-border object-contain lg:mx-0 lg:aspect-[10/15] lg:object-cover lg:object-[50%_35%]"
             />
           </Reveal>
 
@@ -29,7 +29,7 @@ export function FounderSection() {
             <Reveal delay={80}>
               <p className="label-accent">Mylène Miletto</p>
               <h2 className="mt-4 text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
-                <span className="block text-muted-light">
+                <span className="block text-text">
                   « Je ne suis pas souple. »
                 </span>
                 <span className="mt-2 block text-text">

@@ -7,11 +7,17 @@ const testimonialSources: Record<number, string> = {
   27: "Reçu sur WhatsApp",
 };
 
+const testimonialVideos: Record<number, string> = {
+  3: "/videos/testimonials/testimonial-03.mp4",
+  10: "/videos/testimonials/testimonial-10.mp4",
+};
+
 const testimonials = Array.from({ length: 31 }, (_, index) => {
   const number = index + 1;
 
   return {
     src: `/images/testimonials/testimonial-${String(number).padStart(2, "0")}.png`,
+    videoSrc: testimonialVideos[number],
     alt: `Témoignage d'élève Amplitude ${number}`,
     source: testimonialSources[number] ?? "Reçu sur Instagram",
   };
@@ -52,12 +58,23 @@ export function TestimonialsSection() {
                     {testimonial.source}
                   </span>
                 </div>
-                <img
-                  src={testimonial.src}
-                  alt={testimonial.alt}
-                  loading="lazy"
-                  className="block h-auto w-full"
-                />
+                {testimonial.videoSrc ? (
+                  <video
+                    src={testimonial.videoSrc}
+                    poster={testimonial.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="block h-auto w-full bg-black"
+                  />
+                ) : (
+                  <img
+                    src={testimonial.src}
+                    alt={testimonial.alt}
+                    loading="lazy"
+                    className="block h-auto w-full"
+                  />
+                )}
               </figure>
             </Reveal>
           ))}

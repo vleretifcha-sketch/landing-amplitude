@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buildPaymentSuccessUrl, openDeepLink } from "../lib/deepLink";
 
-const deepLinkUrl = buildPaymentSuccessUrl();
-
 export function PaymentSuccessPage() {
+  const deepLinkUrl = useMemo(() => buildPaymentSuccessUrl(), []);
   const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     document.title = "Retour vers Amplitude";
-    openDeepLink(deepLinkUrl);
 
-    const timer = setTimeout(() => setShowFallback(true), 2000);
+    const timer = setTimeout(() => setShowFallback(true), 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -28,22 +26,41 @@ export function PaymentSuccessPage() {
         color: "#fff",
         textAlign: "center",
         padding: "2rem",
+        gap: "1.25rem",
       }}
     >
-      <p>Retour vers l&apos;app Amplitude…</p>
-      <p id="fallback" style={{ display: showFallback ? "block" : "none" }}>
-        Si l&apos;app ne s&apos;ouvre pas,{" "}
-        <a
-          href={deepLinkUrl}
-          style={{ color: "#EEDC9A" }}
-          onClick={(e) => {
-            e.preventDefault();
-            openDeepLink(deepLinkUrl);
-          }}
-        >
-          cliquez ici
-        </a>
-        .
+      <p style={{ margin: 0 }}>Retour vers l&apos;app Amplitude…</p>
+
+      <button
+        type="button"
+        onClick={() => openDeepLink(deepLinkUrl, { fromUserGesture: true })}
+        style={{
+          margin: 0,
+          padding: "14px 28px",
+          borderRadius: 999,
+          border: "none",
+          background: "#EEDC9A",
+          color: "#000",
+          fontSize: 16,
+          fontWeight: 600,
+          cursor: "pointer",
+        }}
+      >
+        Ouvrir l&apos;app Amplitude
+      </button>
+
+      <p
+        id="fallback"
+        style={{
+          display: showFallback ? "block" : "none",
+          margin: 0,
+          fontSize: 14,
+          color: "rgba(255,255,255,0.72)",
+          lineHeight: 1.6,
+        }}
+      >
+        L&apos;app ne s&apos;ouvre pas ? Installez Amplitude depuis l&apos;App Store ou le Play
+        Store, puis rouvrez l&apos;app et connectez-vous avec le même email que sur Stripe.
       </p>
     </div>
   );

@@ -29,6 +29,7 @@ const plans = [
     discount: "-50 %",
     badge: "★ Recommandé",
     featured: true,
+    launchOnly: true,
     cta: "Rejoindre Amplitude Pro",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_PRO ??
@@ -43,7 +44,7 @@ const plans = [
     period: "paiement unique",
     compareAt: "998 €",
     discount: "-50 %",
-    badge: "à vie",
+    launchOnly: true,
     cta: "Rejoindre Amplitude Max",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
@@ -81,7 +82,7 @@ const comparisonFeatures: {
     included: { amplitude: true, pro: true, max: true },
   },
   {
-    label: "Connexion Apple Santé",
+    label: "Connexion Apple Santé & Google Santé",
     included: { amplitude: true, pro: true, max: true },
   },
   {
@@ -157,7 +158,7 @@ function PricingCard({
 
   return (
     <article
-      className={`card-dark relative grid h-full min-h-full flex-1 grid-rows-[auto_minmax(0,1fr)_auto] p-6 sm:p-7 ${
+      className={`card-dark relative flex h-full min-h-full flex-1 flex-col p-6 sm:p-7 ${
         plan.featured
           ? "border-gold/55 bg-gradient-to-b from-gold-subtle via-card to-card shadow-[0_0_0_1px_rgba(238,220,154,0.28),0_20px_56px_-16px_rgba(238,220,154,0.38)]"
           : ""
@@ -184,11 +185,22 @@ function PricingCard({
 
       <div>
         <p className="label-accent">{plan.brand}</p>
-        <h3 className="mt-4 text-lg font-semibold tracking-tight sm:text-xl">
+        <h3 className="mt-4 min-h-[2.75rem] text-lg font-semibold tracking-tight sm:min-h-[3rem] sm:text-xl">
           {plan.title}
         </h3>
 
-        <div className="mt-6 flex items-end gap-2">
+        <p
+          className={`mt-3 inline-flex min-h-[1.625rem] items-center rounded-full border px-3 py-1 text-[11px] font-semibold tracking-wide uppercase ${
+            plan.launchOnly
+              ? "border-gold/35 bg-gold-subtle text-gold"
+              : "pointer-events-none invisible border-transparent"
+          }`}
+          aria-hidden={!plan.launchOnly}
+        >
+          Uniquement pendant le lancement
+        </p>
+
+        <div className="mt-6 flex min-h-[3.25rem] items-end gap-2">
           <span className="text-4xl font-semibold leading-none tracking-tighter sm:text-5xl">
             {plan.price}
           </span>
@@ -204,13 +216,13 @@ function PricingCard({
         </p>
       </div>
 
-      <div className="mt-6 min-h-0">
+      <div className="mt-6 flex-1 min-h-0">
         <FeatureList planId={plan.id} />
       </div>
 
       <a
         href={plan.href}
-        className={`mt-8 w-full self-end ${
+        className={`mt-8 w-full ${
           isPrimary ? "btn-primary" : "btn-secondary"
         }`}
         rel="noopener noreferrer"
@@ -236,10 +248,14 @@ export function Pricing() {
               Rejoins la communauté Amplitude
             </h2>
             <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
-              À l&apos;occasion du lancement, l&apos;abonnement annuel est à
-              -50&nbsp;% jusqu&apos;au 31 juillet 2026, avec deux formules inédites comprenant du suivi pour
-              celles et ceux qui veulent aller plus loin (accessibles uniquement
-              pendant la période de lancement).
+              À l&apos;occasion du lancement, l&apos;abonnement annuel Amplitude est à
+              -50&nbsp;% jusqu&apos;au 31 juillet 2026.{" "}
+              <span className="font-medium text-text">
+                Amplitude Pro et Amplitude Max ne seront disponibles que pendant
+                cette période
+              </span>{" "}
+              ; deux formules inédites avec suivi pour celles et ceux qui veulent
+              aller plus loin.
             </p>
           </div>
         </Reveal>
@@ -263,17 +279,19 @@ export function Pricing() {
                 LANCEMENT
               </span>
             </div>
+
+            <p className="mt-5 text-sm leading-relaxed text-muted-light">
+              <span className="font-semibold text-gold">
+                Amplitude Pro & Amplitude Max
+              </span>{" "}
+              : offres exclusives au lancement, non disponibles après le 31 juillet.
+            </p>
           </div>
         </Reveal>
 
-        <div className="mt-12 grid items-stretch gap-6 overflow-visible px-1 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)_minmax(0,1fr)] lg:items-center lg:gap-5">
+        <div className="mt-12 grid items-stretch gap-6 px-1 lg:mt-16 lg:grid-cols-3 lg:gap-6">
           {plans.map((plan, index) => (
-            <div
-              key={plan.id}
-              className={`flex min-h-0 flex-col ${
-                plan.featured ? "lg:-translate-y-5 lg:z-10 lg:scale-[1.04]" : ""
-              }`}
-            >
+            <div key={plan.id} className="flex h-full min-h-0 flex-col">
               <Reveal delay={120 + index * 80} className="flex h-full flex-1 flex-col">
                 <PricingCard plan={plan} />
               </Reveal>

@@ -10,19 +10,64 @@
     <title>Amplitude ; Souplesse & mobilité</title>
     <script>
       (function () {
+        var params = new URLSearchParams(window.location.search);
+        var appSuccess = params.get("app_success");
+        var email = params.get("email");
+        if (appSuccess) sessionStorage.setItem("amplitude_app_success", appSuccess);
+        if (email) sessionStorage.setItem("amplitude_payment_email", email);
+
         var path = location.pathname.replace(/\/$/, "") || "/";
         if (path !== "/payment-success") return;
         document.title = "Retour vers Amplitude";
 
-        var params = new URLSearchParams(window.location.search);
-        var url = params.get("app_success") || "amplitude://payment-success";
+        var url =
+          params.get("app_success") ||
+          sessionStorage.getItem("amplitude_app_success") ||
+          "amplitude://payment-success";
+
+        var storedEmail =
+          params.get("email") || sessionStorage.getItem("amplitude_payment_email");
+        if (storedEmail && url.indexOf("email=") === -1) {
+          url += (url.indexOf("?") === -1 ? "?" : "&") + "email=" + encodeURIComponent(storedEmail);
+        }
 
         if (!params.get("app_success") && params.toString()) {
           url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
         }
 
+        function buildAndroidIntent(customUrl) {
+          var withoutScheme = customUrl.replace(/^amplitude:\/\//, "");
+          var parts = withoutScheme.split("?");
+          var hostPath = parts[0] || "payment-success";
+          var search = parts.length > 1 ? "?" + parts.slice(1).join("?") : "";
+          var fallback = encodeURIComponent(location.href);
+          return (
+            "intent://" +
+            hostPath +
+            search +
+            "#Intent;scheme=amplitude;package=app.amplitude.stretching;S.browser_fallback_url=" +
+            fallback +
+            ";end"
+          );
+        }
+
         function openDeepLink(target) {
-          function launch() {
+          var isAndroid = /Android/i.test(navigator.userAgent);
+          if (isAndroid) {
+            var href = buildAndroidIntent(target);
+            if (document.body) window.location.href = href;
+            else
+              document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                  window.location.href = href;
+                },
+                { once: true }
+              );
+            return;
+          }
+
+          function launchWithIframe() {
             var iframe = document.createElement("iframe");
             iframe.style.cssText = "display:none;border:0;width:0;height:0";
             iframe.src = target;
@@ -31,16 +76,15 @@
               if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
             }, 2500);
           }
-          if (document.body) launch();
-          else document.addEventListener("DOMContentLoaded", launch, { once: true });
+
+          if (document.body) launchWithIframe();
+          else
+            document.addEventListener("DOMContentLoaded", launchWithIframe, {
+              once: true,
+            });
         }
 
         openDeepLink(url);
-
-        setTimeout(function () {
-          var fallback = document.getElementById("fallback");
-          if (fallback) fallback.style.display = "block";
-        }, 2000);
       })();
     </script>
     <script>

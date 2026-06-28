@@ -21,7 +21,17 @@ function PhoneMockup({
   );
 }
 
-const highlights = [
+const highlights: {
+  title: string;
+  description: string;
+  featured?: boolean;
+}[] = [
+  {
+    title: "Un nouveau cours ou programme chaque mois",
+    description:
+      "Chaque mois, du contenu inédit rejoint l'app : nouveaux programmes, séances et focus pour que ta pratique évolue sans jamais stagner.",
+    featured: true,
+  },
   {
     title: "Des cours guidés en mobilité et souplesse active et passive",
     description:
@@ -85,14 +95,24 @@ export function AppPresentationSection() {
                 L&apos;aboutissement de 10 ans de pratique, d&apos;erreurs et
                 d&apos;enseignement ; réuni dans une appli pensée pour tous : du
                 télétravailleur sédentaire jusqu&apos;aux sportifs
-                professionnels.
+                professionnels.{" "}
+                <span className="font-medium text-text">
+                  Et chaque mois, un nouveau cours ou programme vient enrichir
+                  l&apos;application.
+                </span>
               </p>
             </Reveal>
 
             <ul className="mt-10 space-y-6 sm:mt-12">
               {highlights.map((item, index) => (
                 <Reveal key={item.title} delay={80 + index * 60}>
-                  <li className="flex gap-3.5">
+                  <li
+                    className={`flex gap-3.5 ${
+                      item.featured
+                        ? "rounded-2xl border border-gold/25 bg-gold-subtle p-4 sm:p-5"
+                        : ""
+                    }`}
+                  >
                     <span
                       aria-hidden
                       className="mt-0.5 shrink-0 text-sm font-semibold text-gold"
@@ -100,7 +120,13 @@ export function AppPresentationSection() {
                       ✓
                     </span>
                     <div>
-                      <p className="text-base font-semibold">{item.title}</p>
+                      <p
+                        className={`text-base font-semibold ${
+                          item.featured ? "text-gold" : ""
+                        }`}
+                      >
+                        {item.title}
+                      </p>
                       <p className="mt-1.5 text-sm leading-relaxed text-muted-light">
                         {item.description}
                       </p>

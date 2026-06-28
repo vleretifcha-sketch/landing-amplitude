@@ -1,5 +1,6 @@
 export const legalRoutes = {
   cgu: "/cgu",
+  cgv: "/cgv",
   privacy: "/politique-de-confidentialite",
   legalNotice: "/mentions-legales",
   accountDeletion: "/politique-suppression-compte",
