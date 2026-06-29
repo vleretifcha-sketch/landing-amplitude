@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useLaunchCountdown } from "../hooks/useLaunchCountdown";
 import { LAUNCH_END } from "../lib/launch";
@@ -117,12 +118,57 @@ const trustItems = [
   "iOS & Android",
 ];
 
+const PROMO_CODE = "LANCEMENT";
+
+function PromoCodeCopy() {
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(PROMO_CODE);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <div className="inline-flex items-center gap-2">
+      <span className="rounded-lg border border-dashed border-gold/60 bg-bg px-4 py-1.5 text-sm font-bold tracking-[0.12em] text-gold">
+        {PROMO_CODE}
+      </span>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={copied ? "Code copié" : "Copier le code promo"}
+        className="inline-flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-gold/30 bg-bg text-gold transition-colors duration-200 hover:border-gold/50 hover:bg-gold-subtle"
+      >
+        {copied ? (
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        ) : (
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
 
 function FeatureList({ planId }: { planId: PlanId }) {
   return (
     <ul className="min-h-0 space-y-2.5">
       {comparisonFeatures.map((feature) => {
         const included = feature.included[planId];
+        const isMaxExclusive =
+          feature.included.max &&
+          !feature.included.pro &&
+          !feature.included.amplitude;
 
         return (
           <li
@@ -139,7 +185,7 @@ function FeatureList({ planId }: { planId: PlanId }) {
               }`}
               aria-hidden
             >
-              {included ? "✓" : "✕"}
+              {included ? (isMaxExclusive ? "★" : "✓") : "✕"}
             </span>
             <span className={included ? "" : "opacity-70"}>{feature.label}</span>
           </li>
@@ -158,7 +204,7 @@ function PricingCard({
 
   return (
     <article
-      className={`card-dark relative flex h-full min-h-full flex-1 flex-col p-6 sm:p-7 ${
+      className={`card-dark relative flex flex-col p-6 sm:p-7 lg:h-full lg:min-h-full ${
         plan.featured
           ? "border-gold/55 bg-gradient-to-b from-gold-subtle via-card to-card shadow-[0_0_0_1px_rgba(238,220,154,0.28),0_20px_56px_-16px_rgba(238,220,154,0.38)]"
           : ""
@@ -183,24 +229,21 @@ function PricingCard({
         </span>
       ) : null}
 
-      <div>
+      <div className="shrink-0">
         <p className="label-accent">{plan.brand}</p>
-        <h3 className="mt-4 min-h-[2.75rem] text-lg font-semibold tracking-tight sm:min-h-[3rem] sm:text-xl">
+        <h3 className="mt-3 text-lg font-semibold tracking-tight sm:mt-4 sm:text-xl lg:min-h-[3rem]">
           {plan.title}
         </h3>
 
-        <p
-          className={`mt-3 inline-flex min-h-[1.625rem] items-center rounded-full border px-3 py-1 text-[11px] font-semibold tracking-wide uppercase ${
-            plan.launchOnly
-              ? "border-gold/35 bg-gold-subtle text-gold"
-              : "pointer-events-none invisible border-transparent"
-          }`}
-          aria-hidden={!plan.launchOnly}
-        >
-          Uniquement pendant le lancement
-        </p>
+        {plan.launchOnly ? (
+          <p className="mt-3 inline-flex items-center rounded-full border border-gold/35 bg-gold-subtle px-3 py-1 text-[11px] font-semibold tracking-wide text-gold uppercase">
+            Uniquement pendant le lancement
+          </p>
+        ) : (
+          <div className="hidden h-[1.75rem] lg:block" aria-hidden />
+        )}
 
-        <div className="mt-6 flex min-h-[3.25rem] items-end gap-2">
+        <div className="mt-3 flex items-end gap-2 sm:mt-4">
           <span className="text-4xl font-semibold leading-none tracking-tighter sm:text-5xl">
             {plan.price}
           </span>
@@ -275,9 +318,7 @@ export function Pricing() {
               <p className="text-sm text-muted-light">
                 Code à indiquer pour -50&nbsp;% :
               </p>
-              <span className="rounded-lg border border-dashed border-gold/60 bg-bg px-4 py-1.5 text-sm font-bold tracking-[0.12em] text-gold">
-                LANCEMENT
-              </span>
+              <PromoCodeCopy />
             </div>
 
             <p className="mt-5 text-sm leading-relaxed text-muted-light">
@@ -289,9 +330,9 @@ export function Pricing() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid items-stretch gap-6 px-1 lg:mt-16 lg:grid-cols-3 lg:gap-6">
+        <div className="mt-12 grid items-start gap-6 px-1 lg:mt-16 lg:grid-cols-3 lg:items-stretch lg:gap-6">
           {plans.map((plan, index) => (
-            <div key={plan.id} className="flex h-full min-h-0 flex-col">
+            <div key={plan.id} className="flex min-h-0 flex-col lg:h-full">
               <Reveal delay={120 + index * 80} className="flex h-full flex-1 flex-col">
                 <PricingCard plan={plan} />
               </Reveal>

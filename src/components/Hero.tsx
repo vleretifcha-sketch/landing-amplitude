@@ -251,7 +251,7 @@ export function Hero({ introReady }: { introReady: boolean }) {
                     Rejoindre Amplitude
                   </a>
                   <a
-                    href="#services"
+                    href="#video"
                     className={`btn-secondary w-full lg:w-auto ${heroMobileEnter(introReady, 780)} ${heroDesktopEnter(2050)}`}
                   >
                     En savoir plus

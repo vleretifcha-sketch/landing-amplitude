@@ -95,6 +95,26 @@ l’historique des paiements.
 Les données bancaires ne sont jamais conservées par Amplitude.
 Les paiements sont exclusivement traités par Stripe, conformément à ses propres conditions
 d’utilisation et à sa politique de confidentialité.
+Données de santé et d’activité (Apple Santé / HealthKit)
+Si l’utilisateur active volontairement la synchronisation avec Apple Santé (HealthKit) depuis
+l’application, Amplitude peut, avec son consentement explicite :
+●
+enregistrer dans Apple Santé les séances réalisées (durée, type d’activité) ;
+●
+lire certaines données d’activité déjà présentes dans Apple Santé, uniquement si
+l’utilisateur l’autorise.
+Ces données ne sont pas utilisées à des fins publicitaires, ne sont pas vendues à des tiers
+et servent uniquement au suivi de la pratique sportive dans l’application. L’utilisateur peut
+révoquer l’accès à tout moment dans Réglages iPhone → Santé → Accès aux données et
+appareils → Amplitude.
+Données techniques et de mesure
+●
+mesures de progression (angles de souplesse, photos associées aux mesures) ;
+●
+identifiant d’appareil pour la gestion de la session active (un appareil connecté à la
+fois) ;
+●
+jeton de notification push, si l’utilisateur accepte les notifications.
 ⸻
 Article 4 – Finalités des traitements
 Les données personnelles sont collectées uniquement pour des finalités déterminées, explicites
@@ -168,6 +188,12 @@ l’envoi de courriers électroniques ;
 ●
 l’assistance technique et la maintenance de l’application ;
 la sécurisation des systèmes informatiques.
+●
+●
+l’hébergement de la base de données et de l’authentification via Supabase (infrastructure
+conforme au RGPD, hébergement prioritairement dans l’Espace économique européen) ;
+l’envoi de notifications push via les services Apple (APNs) et, le cas échéant, Google
+(FCM).
 Ces prestataires agissent uniquement sur instruction de l’Éditeur et sont tenus à une obligation
 de confidentialité ainsi qu’au respect de la réglementation applicable en matière de protection
 des données personnelles.
@@ -240,17 +266,20 @@ les données personnelles concernées.
 Une réponse sera apportée dans les délais prévus par la réglementation applicable.
 ⸻
 Article 11 – Suppression du compte et des données
-L’utilisateur peut demander à tout moment la suppression de son compte.
-Cette demande peut être effectuée directement depuis l’application lorsque cette fonctionnalité
-est disponible ou en contactant l’Éditeur à l’adresse suivante :
-contact@amplitudeapp.fr
+L’utilisateur peut demander à tout moment la suppression de son compte :
+●
+●
+directement depuis l’application : Paramètres → Supprimer mon compte (double confirmation
+requise) ;
+ou en contactant l’Éditeur à l’adresse : contact@amplitudeapp.fr.
 La suppression du compte entraîne, sous réserve des obligations légales de conservation :
 ●
 ●
 ●
-la désactivation de l’accès à l’application ;
-la suppression ou l’anonymisation des données personnelles associées au compte ;
-la suppression du profil utilisateur.
+la désactivation immédiate de l’accès à l’application ;
+la suppression du compte d’authentification et du profil utilisateur ;
+la suppression des données associées (séances, mesures, publications communauté,
+préférences), sous 30 jours.
 Certaines données peuvent néanmoins être conservées lorsque leur conservation est nécessaire
 au respect d’une obligation légale, à la prévention de la fraude ou à la défense des droits de
 l’Éditeur.
@@ -353,3 +382,18 @@ le site internet et l’application Amplitude.
 Elle demeure applicable jusqu’à son remplacement par une version ultérieure.
 Les utilisateurs sont invités à la consulter régulièrement afin de prendre connaissance de toute
 éventuelle mise à jour.
+⸻
+Article 21 – Apple Santé (HealthKit)
+L’application Amplitude propose une fonctionnalité facultative de synchronisation avec Apple
+Santé. Cette fonctionnalité n’est activée qu’avec le consentement explicite de l’utilisateur.
+Données concernées :
+●
+●
+durée et type des séances de souplesse enregistrées ;
+éventuellement d’autres données d’activité que l’utilisateur autorise Apple Santé à partager.
+Finalité : permettre à l’utilisateur de centraliser son activité physique dans l’application Santé
+d’Apple et suivre sa pratique.
+Base légale : consentement de l’utilisateur (article 6.1.a du RGPD).
+L’utilisateur peut désactiver cette synchronisation à tout moment dans les réglages de
+l’iPhone ou dans Paramètres de l’application Amplitude. La désactivation n’entraîne pas la
+suppression du compte Amplitude.

@@ -66,6 +66,14 @@ export function parseLegalText(text: string): LegalBlock[] {
       continue;
     }
 
+    if (/^Données /.test(trimmed)) {
+      flushList();
+      flushParagraph();
+      inBulletSection = false;
+      blocks.push({ type: "subheading", text: trimmed });
+      continue;
+    }
+
     if (/^\d+\.\s/.test(trimmed)) {
       flushList();
       flushParagraph();
