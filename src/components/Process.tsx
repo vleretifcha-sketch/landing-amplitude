@@ -36,8 +36,8 @@ export function Process() {
             <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
               On t&apos;a fait croire que la souplesse était une question de chance :
               on l&apos;a de naissance, ou jamais. C&apos;est faux. La souplesse et la
-              mobilité suivent exactement les mêmes lois que la force ; et comme un
-              muscle, ça se construit.
+              mobilité répondent aux mêmes principes d&apos;entraînement que la force :
+              elles s&apos;améliorent avec une pratique régulière.
             </p>
           </div>
         </Reveal>
