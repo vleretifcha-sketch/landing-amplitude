@@ -101,6 +101,21 @@ export function LegalDocumentPage({ path }: { path: string }) {
   return (
     <LegalLayout title={meta.title} subtitle={meta.subtitle}>
       <LegalBlocks blocks={parseLegalText(content)} />
+      {key === "accountDeletion" ? (
+        <div className="surface-inset mt-8 rounded-2xl p-5 sm:p-6">
+          <p className="text-sm font-medium text-white">
+            Vous souhaitez résilier votre abonnement ?
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-light">
+            La suppression du compte se fait directement depuis
+            l&apos;application (Réglages). Pour résilier ou gérer votre
+            abonnement sans ouvrir l&apos;app, utilisez le lien ci-dessous.
+          </p>
+          <a href="/gerer-abonnement" className="btn-primary mt-4 inline-block">
+            Gérer mon abonnement
+          </a>
+        </div>
+      ) : null}
     </LegalLayout>
   );
 }

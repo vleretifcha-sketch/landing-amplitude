@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
-import { buildPaymentSuccessUrl, openDeepLink } from "../lib/deepLink";
+import { useEffect, useMemo } from "react";
+
+function getPaymentEmail(): string | null {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("email") || sessionStorage.getItem("amplitude_payment_email");
+}
 
 export function PaymentSuccessPage() {
-  const deepLinkUrl = useMemo(() => buildPaymentSuccessUrl(), []);
-  const [showFallback, setShowFallback] = useState(false);
+  const email = useMemo(() => getPaymentEmail(), []);
 
   useEffect(() => {
-    document.title = "Retour vers Amplitude";
-
-    const timer = setTimeout(() => setShowFallback(true), 1500);
-    return () => clearTimeout(timer);
+    document.title = "Bienvenue sur Amplitude";
   }, []);
 
   return (
@@ -29,38 +29,27 @@ export function PaymentSuccessPage() {
         gap: "1.25rem",
       }}
     >
-      <p style={{ margin: 0 }}>Retour vers l&apos;app Amplitude…</p>
-
-      <button
-        type="button"
-        onClick={() => openDeepLink(deepLinkUrl, { fromUserGesture: true })}
-        style={{
-          margin: 0,
-          padding: "14px 28px",
-          borderRadius: 999,
-          border: "none",
-          background: "#EEDC9A",
-          color: "#000",
-          fontSize: 16,
-          fontWeight: 600,
-          cursor: "pointer",
-        }}
-      >
-        Ouvrir l&apos;app Amplitude
-      </button>
+      <p style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>
+        Paiement confirmé, bienvenue sur Amplitude !
+      </p>
 
       <p
-        id="fallback"
         style={{
-          display: showFallback ? "block" : "none",
           margin: 0,
-          fontSize: 14,
-          color: "rgba(255,255,255,0.72)",
+          maxWidth: 360,
+          fontSize: 15,
           lineHeight: 1.6,
+          color: "rgba(255,255,255,0.8)",
         }}
       >
-        L&apos;app ne s&apos;ouvre pas ? Installez Amplitude depuis l&apos;App Store ou le Play
-        Store, puis rouvrez l&apos;app et connectez-vous avec le même email que sur Stripe.
+        Téléchargez l&apos;application Amplitude depuis l&apos;App Store ou le Play
+        Store, puis connectez-vous avec{" "}
+        {email ? (
+          <strong style={{ color: "#EEDC9A" }}>{email}</strong>
+        ) : (
+          "l'adresse email utilisée pour le paiement"
+        )}
+        . Il vous sera demandé de créer votre mot de passe lors de la première connexion.
       </p>
     </div>
   );

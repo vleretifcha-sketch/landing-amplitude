@@ -6,6 +6,7 @@ import { StatsSection } from "./components/StatsSection";
 import { FounderSection } from "./components/FounderSection";
 import { Process } from "./components/Process";
 import { AppPresentationSection } from "./components/AppPresentationSection";
+import { InteractiveAppPreview } from "./components/InteractiveAppPreview";
 import { Features } from "./components/Features";
 import { Services } from "./components/Services";
 import { Pricing } from "./components/Pricing";
@@ -36,6 +37,7 @@ export default function App() {
           <FounderSection />
           <Process />
           <AppPresentationSection />
+          <InteractiveAppPreview />
           <Features />
           <Services />
           <Pricing />
