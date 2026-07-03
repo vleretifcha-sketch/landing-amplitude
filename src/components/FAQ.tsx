@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Combien de temps dure une séance ?",
-    a: "Compte environ 20 à 45 minutes par séance, une fois par semaine, selon ton objectif. Assez court pour tenir dans ton emploi du temps, assez dense pour faire progresser ton amplitude.",
+    a: "Compte environ 20 à 45 minutes par séance, plusieurs fois par semaine, selon ton objectif. Assez court pour tenir dans ton emploi du temps, assez dense pour faire progresser ton amplitude.",
   },
   {
     q: "Sur quels appareils, et si je ne renouvelle pas ?",

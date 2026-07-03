@@ -75,10 +75,6 @@ const comparisonFeatures: {
     included: { amplitude: true, pro: true, max: true },
   },
   {
-    label: "Espace conseils hebdomadaire",
-    included: { amplitude: true, pro: true, max: true },
-  },
-  {
     label: "Outil de mesure photo",
     included: { amplitude: true, pro: true, max: true },
   },
