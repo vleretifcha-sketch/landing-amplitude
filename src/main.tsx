@@ -5,7 +5,6 @@ import { SubscribePage } from "./pages/SubscribePage";
 import { PaymentSuccessPage } from "./pages/PaymentSuccessPage";
 import { ManageSubscriptionPage } from "./pages/ManageSubscriptionPage";
 import { BillingPortalPage } from "./pages/BillingPortalPage";
-import { ResetPasswordRelayPage } from "./pages/ResetPasswordRelayPage";
 import { LegalDocumentPage } from "./pages/LegalDocumentPage";
 import { isLegalPath } from "./lib/legalRoutes";
 import { persistPaymentReturnParams } from "./lib/deepLink";
@@ -20,7 +19,6 @@ function Page() {
   if (path === "/payment-success") return <PaymentSuccessPage />;
   if (path === "/gerer-abonnement") return <ManageSubscriptionPage />;
   if (path === "/billing-portal") return <BillingPortalPage />;
-  if (path === "/reset-password") return <ResetPasswordRelayPage />;
   if (isLegalPath(path)) return <LegalDocumentPage path={path} />;
   return <App />;
 }
