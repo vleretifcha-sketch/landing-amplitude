@@ -29,7 +29,7 @@ const programs = [
     subtitle: "Pour un dos et des épaules plus mobiles et solides",
     description:
       "Gagner en amplitude avec des charges légères, pour développer la force qui te permet de contrôler tes mouvements. Tu ne choisis plus entre force et souplesse.",
-    image: "/images/programs/back.png",
+    image: "/images/programs/back.jpg",
     imageAlt: "Mobilité de dos et d'épaules",
   },
 ];
@@ -114,7 +114,7 @@ export function Features() {
                   alt={program.imageAlt}
                   className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                     index === active ? "opacity-100" : "opacity-0"
-                  } ${program.id === "hips" ? "object-[50%_52%]" : program.id === "back" ? "object-[50%_45%]" : "object-center"}`}
+                  } ${program.id === "hips" ? "object-[50%_52%]" : program.id === "back" ? "object-[50%_40%]" : "object-center"}`}
                 />
               ))}
             </div>
