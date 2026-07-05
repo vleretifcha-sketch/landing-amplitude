@@ -42,8 +42,7 @@ export function PaymentSuccessPage() {
           color: "rgba(255,255,255,0.8)",
         }}
       >
-        Téléchargez l&apos;application Amplitude depuis l&apos;App Store ou le Play
-        Store, puis connectez-vous avec{" "}
+        Téléchargez l&apos;application Amplitude depuis l&apos;App Store, puis connectez-vous avec{" "}
         {email ? (
           <strong style={{ color: "#EEDC9A" }}>{email}</strong>
         ) : (

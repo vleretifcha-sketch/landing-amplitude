@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Sur quels appareils, et si je ne renouvelle pas ?",
-    a: "Amplitude fonctionne sur iOS et Android, mobile et tablette. Ton abonnement annuel est sans reconduction surprise : à la fin de l'année, tu choisis librement de continuer. Avec l'offre Fondateur à vie, tu gardes l'accès pour toujours.",
+    a: "Amplitude fonctionne sur iOS, iPhone et iPad. Ton abonnement annuel est sans reconduction surprise : à la fin de l'année, tu choisis librement de continuer. Avec l'offre Fondateur à vie, tu gardes l'accès pour toujours.",
   },
 ];
 

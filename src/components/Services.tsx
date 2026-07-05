@@ -57,7 +57,7 @@ const tools = [
   {
     title: "Communauté & santé",
     description:
-      "Une communauté privée pour partager tes résultats. Apple Santé & Google Santé connectés.",
+      "Une communauté privée pour partager tes résultats. Apple Santé connecté.",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 21C5 16 3 11 3 8a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 3-2 8-9 13z" />

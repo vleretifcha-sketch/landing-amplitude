@@ -192,8 +192,7 @@ la sécurisation des systèmes informatiques.
 ●
 l’hébergement de la base de données et de l’authentification via Supabase (infrastructure
 conforme au RGPD, hébergement prioritairement dans l’Espace économique européen) ;
-l’envoi de notifications push via les services Apple (APNs) et, le cas échéant, Google
-(FCM).
+l’envoi de notifications push via les services Apple (APNs).
 Ces prestataires agissent uniquement sur instruction de l’Éditeur et sont tenus à une obligation
 de confidentialité ainsi qu’au respect de la réglementation applicable en matière de protection
 des données personnelles.

@@ -59,7 +59,7 @@ const comparisonFeatures: {
   included: Record<PlanId, boolean>;
 }[] = [
   {
-    label: "Accès annuel à l'application mobile (iOS et Android)",
+    label: "Accès annuel à l'application mobile (iOS)",
     included: { amplitude: true, pro: true, max: true },
   },
   {
@@ -79,7 +79,7 @@ const comparisonFeatures: {
     included: { amplitude: true, pro: true, max: true },
   },
   {
-    label: "Connexion Apple Santé & Google Santé",
+    label: "Connexion Apple Santé",
     included: { amplitude: true, pro: true, max: true },
   },
   {
@@ -95,7 +95,7 @@ const comparisonFeatures: {
     included: { amplitude: false, pro: true, max: true },
   },
   {
-    label: "Accès à vie à l'application mobile (iOS et Android)",
+    label: "Accès à vie à l'application mobile (iOS)",
     included: { amplitude: false, pro: false, max: true },
   },
   {
@@ -111,7 +111,7 @@ const comparisonFeatures: {
 const trustItems = [
   "7 jours satisfait ou remboursé",
   "Paiement sécurisé",
-  "iOS & Android",
+  "iOS",
 ];
 
 const PROMO_CODE = "LANCEMENT";

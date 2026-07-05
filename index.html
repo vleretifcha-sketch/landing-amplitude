@@ -35,38 +35,7 @@
           url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
         }
 
-        function buildAndroidIntent(customUrl) {
-          var withoutScheme = customUrl.replace(/^amplitude:\/\//, "");
-          var parts = withoutScheme.split("?");
-          var hostPath = parts[0] || "payment-success";
-          var search = parts.length > 1 ? "?" + parts.slice(1).join("?") : "";
-          var fallback = encodeURIComponent(location.href);
-          return (
-            "intent://" +
-            hostPath +
-            search +
-            "#Intent;scheme=amplitude;package=app.amplitude.stretching;S.browser_fallback_url=" +
-            fallback +
-            ";end"
-          );
-        }
-
         function openDeepLink(target) {
-          var isAndroid = /Android/i.test(navigator.userAgent);
-          if (isAndroid) {
-            var href = buildAndroidIntent(target);
-            if (document.body) window.location.href = href;
-            else
-              document.addEventListener(
-                "DOMContentLoaded",
-                function () {
-                  window.location.href = href;
-                },
-                { once: true }
-              );
-            return;
-          }
-
           function launchWithIframe() {
             var iframe = document.createElement("iframe");
             iframe.style.cssText = "display:none;border:0;width:0;height:0";
