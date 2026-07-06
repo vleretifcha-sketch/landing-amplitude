@@ -66,6 +66,7 @@ export function Features() {
                     type="button"
                     role="tab"
                     aria-selected={isActive}
+                    aria-expanded={isActive}
                     aria-controls={`program-panel-${program.id}`}
                     id={`program-tab-${program.id}`}
                     onClick={() => setActive(index)}
@@ -75,19 +76,35 @@ export function Features() {
                         : "border-border bg-card hover:border-gold/20 hover:bg-card-hover"
                     }`}
                   >
-                    <div className="flex items-baseline justify-between gap-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+                          <span
+                            className={`text-base font-semibold sm:text-lg ${
+                              isActive ? "text-text" : "text-muted-light"
+                            }`}
+                          >
+                            {program.title}
+                          </span>
+                          <span className="text-xs text-muted sm:text-sm">
+                            {program.duration}
+                          </span>
+                        </div>
+                        <p className="mt-2 text-sm leading-snug text-muted-light">
+                          {program.subtitle}
+                        </p>
+                      </div>
                       <span
-                        className={`text-base font-semibold sm:text-lg ${
-                          isActive ? "text-text" : "text-muted-light"
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border text-lg leading-none transition-colors duration-200 ${
+                          isActive
+                            ? "border-gold/40 bg-gold-subtle text-gold"
+                            : "border-border text-muted-light"
                         }`}
+                        aria-hidden="true"
                       >
-                        {program.title}
-                      </span>
-                      <span className="shrink-0 text-xs text-muted sm:text-sm">
-                        {program.duration}
+                        {isActive ? "−" : "+"}
                       </span>
                     </div>
-                    <p className="mt-2 text-sm leading-snug text-muted-light">{program.subtitle}</p>
                   </button>
                 );
               })}
@@ -105,8 +122,8 @@ export function Features() {
             </article>
           </div>
 
-          <Reveal delay={120} className="min-h-[20rem] lg:min-h-[24rem]">
-            <div className="relative h-full min-h-[20rem] overflow-hidden rounded-3xl border border-border lg:min-h-[24rem]">
+          <Reveal delay={120}>
+            <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-border sm:aspect-auto sm:min-h-[24rem] lg:min-h-[24rem]">
               {programs.map((program, index) => (
                 <img
                   key={program.id}
@@ -114,7 +131,7 @@ export function Features() {
                   alt={program.imageAlt}
                   className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                     index === active ? "opacity-100" : "opacity-0"
-                  } ${program.id === "hips" ? "object-[50%_52%]" : program.id === "back" ? "object-[50%_40%]" : "object-center"}`}
+                  } ${program.id === "hips" ? "object-[50%_52%]" : program.id === "back" ? "object-center" : "object-center"}`}
                 />
               ))}
             </div>

@@ -1,10 +1,12 @@
 import { Reveal } from "./Reveal";
 
 const paragraphs = [
-  "Je ne suis pas née souple. On m'a même dit que je ne le serais jamais, et pourtant…",
-  "Passionnée par le mouvement depuis plus de 10 ans, j'ai construit mon expertise à travers la musculation, la pole dance et les disciplines aériennes ; jusqu'à la souplesse et la mobilité, que j'ai enseignées et dont j'ai fait mon métier. En 2019, j'ai fondé ma propre école et suite à la fermeture COVID, j'ai eu envie d'une version digitale.",
-  "On m'a dit que je n'étais génétiquement pas souple.. Les méthodes que j'ai pu exercer ne faisaient qu'une chose : me blesser ; parce qu'elles sont pensées pour des corps déjà souples, pas pour le mien. Alors j'ai construit ma méthode, une méthode pragmatique & progressive basée sur le meilleur de mes entraînements. Aujourd'hui, j'ai mes deux écarts latéraux, mon facial, mes oversplits. Et je ne me blesse plus.",
-  "Ma mission : permettre à chacun de développer un corps plus mobile, plus souple et plus performant ; à son rythme, depuis chez soi ou sa salle de sport préférée.",
+  "Je ne suis pas née souple. On m'a même dit que je ne le serais jamais. Je n'étais même pas sportive dans l'enfance ou l'adolescence. Et pourtant…",
+  "Passionnée par le mouvement depuis plus de 10 ans, j'ai construit mon expertise et me suis formé à travers les disciplines aériennes, la pole dance et la musculation, avant de me spécialiser dans la souplesse et la mobilité, que j'enseigne aujourd'hui et dont j'ai fait mon métier.",
+  "En 2019, j'ai fondé ma propre école. Suite à sa fermeture pendant le COVID, j'ai eu envie de créer une version digitale.",
+  "On m'a dit que je n'étais génétiquement pas souple. À force d'essayer des méthodes qui ne me correspondaient pas, je ne progressais pas. Je cumulais la frustration, les blessures… et je finissais par croire que la souplesse n'était tout simplement pas faite pour moi.",
+  "Alors j'ai construit ma propre méthode : une approche pragmatique et progressive, basée sur le meilleur de mes entraînements. Aujourd'hui, j'ai atteint un niveau de mobilité que je pensais inaccessible, jusqu'à obtenir tous mes écarts et une liberté de mouvement que je n'aurais jamais cru possible.",
+  "Ma mission : permettre à chacun(e) de développer un corps plus mobile, plus souple et plus performant, à son rythme, à la maison ou en salle de sport.",
 ];
 
 export function FounderSection() {

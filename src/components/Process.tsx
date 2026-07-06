@@ -28,7 +28,7 @@ export function Process() {
             <h2 className="mt-5 text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
               <span className="block">
                 La souplesse{" "}
-                <span className="text-gold">n&apos;est pas un don.</span>
+                <span className="text-gold">n&apos;est pas qu&apos;un don.</span>
               </span>
               <span className="block">C&apos;est une capacité qui se travaille</span>
               <span className="block">; à tout âge et à tout niveau.</span>
