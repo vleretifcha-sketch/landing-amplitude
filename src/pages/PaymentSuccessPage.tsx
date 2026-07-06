@@ -22,7 +22,7 @@ export function PaymentSuccessPage() {
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "system-ui, -apple-system, sans-serif",
-        background: "#000",
+        background: "#0B0B0B",
         color: "#fff",
         textAlign: "center",
         padding: "2rem",
@@ -44,7 +44,7 @@ export function PaymentSuccessPage() {
       >
         Téléchargez l&apos;application Amplitude depuis l&apos;App Store, puis connectez-vous avec{" "}
         {email ? (
-          <strong style={{ color: "#EEDC9A" }}>{email}</strong>
+          <strong style={{ color: "#A6DCBB" }}>{email}</strong>
         ) : (
           "l'adresse email utilisée pour le paiement"
         )}

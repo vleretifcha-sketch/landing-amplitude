@@ -72,33 +72,61 @@
   font-display: swap;
 }
 
+:root {
+  /* Brand */
+  --color-accent: #A6DCBB;
+  --color-accent-dark: #8CC9A6;
+  --color-on-accent: #0A0A0A;
+
+  /* Backgrounds */
+  --color-bg: #0B0B0B;
+  --color-bg-soft: #111111;
+  --color-surface: #171717;
+  --color-surface-elevated: #1F1F1F;
+  --color-surface-light: #2C2C2C;
+
+  /* Text */
+  --color-text: #FFFFFF;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+
+  /* Borders */
+  --color-border: #333333;
+  --color-border-subtle: #262626;
+
+  /* UI */
+  --color-tab-pill: #2C2C2C;
+  --color-icon-badge-bg: #1B2A24;
+  --color-accent-subtle: rgba(166, 220, 187, 0.14);
+}
+
 @theme {
   --font-sans: "Outfit", system-ui, sans-serif;
 
-  --color-bg: #000000;
-  --color-card: #111111;
-  --color-card-hover: #161616;
-  --color-border: #222222;
-  --color-border-light: #2a2a2a;
-  --color-text: #ffffff;
-  --color-muted: #888888;
-  --color-muted-light: #a3a3a3;
-  --color-gold: #eedc9a;
-  --color-gold-light: #f5efd4;
-  --color-gold-dark: #c9b56e;
-  --color-gold-subtle: rgba(238, 220, 154, 0.14);
-  --color-badge-bg: rgba(238, 220, 154, 0.14);
-  --color-badge-border: rgba(238, 220, 154, 0.25);
-  --color-badge-text: #eedc9a;
-  --color-on-gold: #0b0b0b;
-  --color-surface-inset: rgba(0, 0, 0, 0.5);
+  --color-bg: #0B0B0B;
+  --color-card: #171717;
+  --color-card-hover: #1F1F1F;
+  --color-border: #333333;
+  --color-border-light: #262626;
+  --color-text: #FFFFFF;
+  --color-muted: #71717A;
+  --color-muted-light: #A1A1AA;
+  --color-gold: #A6DCBB;
+  --color-gold-light: #C8EBD8;
+  --color-gold-dark: #8CC9A6;
+  --color-gold-subtle: rgba(166, 220, 187, 0.14);
+  --color-badge-bg: #1B2A24;
+  --color-badge-border: rgba(166, 220, 187, 0.25);
+  --color-badge-text: #A6DCBB;
+  --color-on-gold: #0A0A0A;
+  --color-surface-inset: #111111;
   --color-glass-border: rgba(255, 255, 255, 0.1);
   --color-glass-bg: rgba(255, 255, 255, 0.06);
   --color-preview-bg: #f2f2f2;
-  --color-chip-bg: rgba(255, 255, 255, 0.1);
-  --color-chip-border: rgba(255, 255, 255, 0.2);
+  --color-chip-bg: #2C2C2C;
+  --color-chip-border: #333333;
   --color-avatar-bg: rgba(255, 255, 255, 0.3);
-  --color-media-bg: #000000;
+  --color-media-bg: #0B0B0B;
   --color-logo-filter: none;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
