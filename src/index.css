@@ -74,8 +74,8 @@
 
 :root {
   /* Brand */
-  --color-accent: #A6DCBB;
-  --color-accent-dark: #8CC9A6;
+  --color-accent: #E3D3A4;
+  --color-accent-dark: #C9B98A;
   --color-on-accent: #0A0A0A;
 
   /* Backgrounds */
@@ -96,8 +96,8 @@
 
   /* UI */
   --color-tab-pill: #2C2C2C;
-  --color-icon-badge-bg: #1B2A24;
-  --color-accent-subtle: rgba(166, 220, 187, 0.14);
+  --color-icon-badge-bg: rgba(227, 211, 164, 0.14);
+  --color-accent-subtle: rgba(227, 211, 164, 0.14);
 }
 
 @theme {
@@ -115,7 +115,7 @@
   --color-gold-light: #EFE4C4;
   --color-gold-dark: #C9B98A;
   --color-gold-subtle: rgba(227, 211, 164, 0.14);
-  --color-badge-bg: #1B2A24;
+  --color-badge-bg: rgba(227, 211, 164, 0.14);
   --color-badge-border: rgba(227, 211, 164, 0.25);
   --color-badge-text: #E3D3A4;
   --color-on-gold: #0A0A0A;
