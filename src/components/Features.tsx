@@ -4,13 +4,13 @@ import { Reveal } from "./Reveal";
 const programs = [
   {
     id: "hips",
-    title: "Mobilité de hanches",
+    title: "Mobilité des hanches",
     duration: "6 semaines",
     subtitle: "La mobilité au service du mouvement",
     description:
       "Débloque tes hanches pour un squat plus profond, des écarts plus alignés, un mouvement plus libre dans ton sport ou une figure qui passe en pole. Une mobilité utile.",
     image: "/images/programs/hips.jpg",
-    imageAlt: "Mobilité de hanches",
+    imageAlt: "Mobilité des hanches",
   },
   {
     id: "split",
@@ -24,13 +24,13 @@ const programs = [
   },
   {
     id: "back",
-    title: "Mobilité de dos et d'épaules",
+    title: "Mobilité du dos et des épaules",
     duration: "4 semaines",
     subtitle: "Pour un dos et des épaules plus mobiles et solides",
     description:
       "Gagner en amplitude avec des charges légères, pour développer la force qui te permet de contrôler tes mouvements. Tu ne choisis plus entre force et souplesse.",
     image: "/images/programs/back.jpg",
-    imageAlt: "Mobilité de dos et d'épaules",
+    imageAlt: "Mobilité du dos et des épaules",
   },
 ];
 

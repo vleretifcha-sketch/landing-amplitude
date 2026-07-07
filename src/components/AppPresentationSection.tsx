@@ -89,11 +89,11 @@ export function AppPresentationSection() {
               <h2 className="mt-5 max-w-xl text-3xl font-medium leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
                 <span className="block">Amplitude.</span>
                 <span className="block">La souplesse</span>
-                <span className="block text-gold">à portée de mains.</span>
+                <span className="block text-gold">à portée de main.</span>
               </h2>
-              <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-light sm:mt-7 sm:text-base">
+              <p className="mt-6 max-w-xl text-pretty text-sm leading-relaxed text-muted-light sm:mt-7 sm:text-base">
                 L&apos;aboutissement de 10 ans de pratique, d&apos;erreurs et
-                d&apos;enseignement ; réuni dans une appli pensée pour tous : du
+                d&apos;enseignement, réuni dans une appli pensée pour tous : du
                 télétravailleur sédentaire jusqu&apos;aux sportifs
                 professionnels.{" "}
                 <span className="font-medium text-text">

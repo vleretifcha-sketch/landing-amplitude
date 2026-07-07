@@ -202,7 +202,7 @@ function PricingCard({
     <article
       className={`card-dark relative flex flex-col p-6 sm:p-7 lg:h-full lg:min-h-full ${
         plan.featured
-          ? "border-gold/55 bg-gradient-to-b from-gold-subtle via-card to-card shadow-[0_0_0_1px_rgba(166,220,187,0.28),0_20px_56px_-16px_rgba(166,220,187,0.38)]"
+          ? "border-gold/55 bg-gradient-to-b from-gold-subtle via-card to-card shadow-[0_0_0_1px_rgba(227,211,164,0.28),0_20px_56px_-16px_rgba(227,211,164,0.38)]"
           : ""
       }`}
     >
@@ -217,7 +217,7 @@ function PricingCard({
         <span
           className={`absolute top-0 right-4 z-10 -translate-y-1/2 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide ${
             plan.featured
-              ? "bg-gold text-on-gold shadow-[0_4px_18px_rgba(166,220,187,0.45)]"
+              ? "bg-gold text-on-gold shadow-[0_4px_18px_rgba(227,211,164,0.45)]"
               : "border border-gold/30 bg-card text-gold"
           }`}
         >

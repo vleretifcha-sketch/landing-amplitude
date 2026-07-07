@@ -4,12 +4,12 @@ const steps = [
   {
     num: 1,
     title: "Parce que ton corps s'adapte à ce que tu lui demandes.",
-    desc: "Tu ajoutes une charge sur la barre, le muscle se renforce. Tu demandes un peu plus d'amplitude chaque semaine, ton corps s'adapte : les tissus gagnent en longueur, ton système nerveux apprend à te laisser aller plus loin, en sécurité. La souplesse s'entraîne, elle ne se force pas.",
+    desc: "Tu ajoutes une charge sur la barre, le muscle se renforce. Tu demandes un peu plus d'amplitude chaque semaine, ton corps s'adapte : les tissus gagnent en longueur, ton système nerveux apprend à se laisser aller plus loin, en sécurité. La souplesse s'entraîne, elle ne se force pas.",
   },
   {
     num: 2,
     title: "Parce que la progression vient de la répétition, pas de l'acharnement.",
-    desc: "Personne ne prend 10 kg de muscle en une séance. La souplesse, c'est pareil : des séries, des répétitions, une amplitude qui gagne des degrés semaine après semaine. Quand le talent ne s'entraîne pas, l'entraînement bat le talent, à chaque fois.",
+    desc: "Personne ne prend 10 kg de muscle en une séance. La\u00A0souplesse, c'est pareil : des séries, des répétitions, une amplitude qui gagne des degrés semaine après semaine. Quand le talent ne s'entraîne pas, l'entraînement bat le talent, à chaque fois.",
   },
   {
     num: 3,
@@ -30,12 +30,13 @@ export function Process() {
                 La souplesse{" "}
                 <span className="text-gold">n&apos;est pas qu&apos;un don.</span>
               </span>
-              <span className="block">C&apos;est une capacité qui se travaille</span>
-              <span className="block">; à tout âge et à tout niveau.</span>
+              <span className="block">
+                C&apos;est une capacité qui se travaille ; à tout âge et à tout niveau.
+              </span>
             </h2>
-            <p className="mt-6 text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
+            <p className="mt-6 text-pretty text-sm leading-[1.75] text-muted-light sm:mt-7 sm:text-base">
               On t&apos;a fait croire que la souplesse était une question de chance :
-              on l&apos;a de naissance, ou jamais. C&apos;est faux. La souplesse et la
+              on l&apos;a de naissance, ou jamais. C&apos;est faux. La&nbsp;souplesse et la
               mobilité répondent aux mêmes principes d&apos;entraînement que la force :
               elles s&apos;améliorent avec une pratique régulière.
             </p>
@@ -51,7 +52,7 @@ export function Process() {
                     {step.num}
                   </div>
                   <h3 className="mt-6 text-lg font-semibold leading-snug">{step.title}</h3>
-                  <p className="mt-3.5 text-sm leading-[1.75] text-muted-light">
+                  <p className="mt-3.5 text-pretty text-sm leading-[1.75] text-muted-light sm:text-justify">
                     {step.desc}
                   </p>
                 </article>

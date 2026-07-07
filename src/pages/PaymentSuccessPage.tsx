@@ -44,7 +44,7 @@ export function PaymentSuccessPage() {
       >
         Téléchargez l&apos;application Amplitude depuis l&apos;App Store, puis connectez-vous avec{" "}
         {email ? (
-          <strong style={{ color: "#A6DCBB" }}>{email}</strong>
+          <strong style={{ color: "#E3D3A4" }}>{email}</strong>
         ) : (
           "l'adresse email utilisée pour le paiement"
         )}
