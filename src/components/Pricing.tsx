@@ -49,7 +49,7 @@ const plans = [
     cta: "Rejoindre Amplitude Max",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
-      "https://book.stripe.com/bJe4gA04E7mxdGsgHj2cg05",
+      "https://buy.stripe.com/bJe9AU04E5ep31Odv72cg06",
     variant: "secondary" as const,
   },
 ];
