@@ -107,9 +107,9 @@ export function LegalDocumentPage({ path }: { path: string }) {
             Vous souhaitez résilier votre abonnement ?
           </p>
           <p className="mt-2 text-sm leading-relaxed text-muted-light">
-            La suppression du compte se fait directement depuis
-            l&apos;application (Réglages). Pour résilier ou gérer votre
-            abonnement sans ouvrir l&apos;app, utilisez le lien ci-dessous.
+            La suppression du compte et la gestion de l&apos;abonnement se font
+            depuis ce site, et non depuis l&apos;application. Pour résilier ou
+            gérer votre abonnement, utilisez le lien ci-dessous.
           </p>
           <a href="/gerer-abonnement" className="btn-primary mt-4 inline-block">
             Gérer mon abonnement

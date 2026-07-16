@@ -4,6 +4,9 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/reset-password", "destination": "/reset-password.html" },
+    { "source": "/reset-password/", "destination": "/reset-password.html" },
+    { "source": "/payment-success", "destination": "/payment-success.html" },
+    { "source": "/payment-success/", "destination": "/payment-success.html" },
     { "source": "/((?!assets/).*)", "destination": "/index.html" }
   ]
 }

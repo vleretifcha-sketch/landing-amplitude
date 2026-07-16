@@ -9,54 +9,6 @@
     />
     <title>Amplitude ; Souplesse & mobilité</title>
     <script>
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var appSuccess = params.get("app_success");
-        var email = params.get("email");
-        if (appSuccess) sessionStorage.setItem("amplitude_app_success", appSuccess);
-        if (email) sessionStorage.setItem("amplitude_payment_email", email);
-
-        var path = location.pathname.replace(/\/$/, "") || "/";
-        if (path !== "/payment-success") return;
-        document.title = "Retour vers Amplitude";
-
-        var url =
-          params.get("app_success") ||
-          sessionStorage.getItem("amplitude_app_success") ||
-          "amplitude://payment-success";
-
-        var storedEmail =
-          params.get("email") || sessionStorage.getItem("amplitude_payment_email");
-        if (storedEmail && url.indexOf("email=") === -1) {
-          url += (url.indexOf("?") === -1 ? "?" : "&") + "email=" + encodeURIComponent(storedEmail);
-        }
-
-        if (!params.get("app_success") && params.toString()) {
-          url += (url.indexOf("?") === -1 ? "?" : "&") + params.toString();
-        }
-
-        function openDeepLink(target) {
-          function launchWithIframe() {
-            var iframe = document.createElement("iframe");
-            iframe.style.cssText = "display:none;border:0;width:0;height:0";
-            iframe.src = target;
-            (document.body || document.documentElement).appendChild(iframe);
-            setTimeout(function () {
-              if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-            }, 2500);
-          }
-
-          if (document.body) launchWithIframe();
-          else
-            document.addEventListener("DOMContentLoaded", launchWithIframe, {
-              once: true,
-            });
-        }
-
-        openDeepLink(url);
-      })();
-    </script>
-    <script>
       document.documentElement.setAttribute("data-theme", "dark");
       document.documentElement.style.colorScheme = "dark";
     </script>
