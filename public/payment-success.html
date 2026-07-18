@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amplitude — Paiement confirmé</title>
   <meta name="robots" content="noindex" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '869093325933237');
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase', {
+      value: 149.00,
+      currency: 'EUR'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=869093325933237&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     :root {
       --bg: #0b0b0b;
@@ -113,17 +134,10 @@
   </style>
   <script>
     (function () {
+      // Pas d'ouverture auto du deep link : sur mobile (surtout après Stripe),
+      // amplitude:// via iframe masque souvent la page de confirmation.
       var query = window.location.search || '';
       var deepLink = 'amplitude://payment-success' + query;
-
-      // Tentative douce d'ouvrir l'app si déjà installée (sans quitter la page).
-      var iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = deepLink;
-      document.documentElement.appendChild(iframe);
-      setTimeout(function () {
-        try { document.documentElement.removeChild(iframe); } catch (e) {}
-      }, 1500);
 
       document.addEventListener('DOMContentLoaded', function () {
         var openApp = document.getElementById('open-app');

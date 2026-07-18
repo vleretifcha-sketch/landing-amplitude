@@ -46,6 +46,7 @@ const plans = [
     compareAt: "998 €",
     discount: "-50 %",
     launchOnly: true,
+    scarcityNote: "Seulement 20 places disponibles",
     cta: "Rejoindre Amplitude Max",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
@@ -232,9 +233,16 @@ function PricingCard({
         </h3>
 
         {plan.launchOnly ? (
-          <p className="mt-3 inline-flex items-center rounded-full border border-gold/35 bg-gold-subtle px-3 py-1 text-[11px] font-semibold tracking-wide text-gold uppercase">
-            Uniquement pendant le lancement
-          </p>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <p className="inline-flex items-center rounded-full border border-gold/35 bg-gold-subtle px-3 py-1 text-[11px] font-semibold tracking-wide text-gold uppercase">
+              Uniquement pendant le lancement
+            </p>
+            {"scarcityNote" in plan && plan.scarcityNote ? (
+              <p className="inline-flex items-center rounded-full border border-gold/35 bg-gold-subtle px-3 py-1 text-[11px] font-semibold tracking-wide text-gold uppercase">
+                {plan.scarcityNote}
+              </p>
+            ) : null}
+          </div>
         ) : (
           <div className="hidden h-[1.75rem] lg:block" aria-hidden />
         )}
