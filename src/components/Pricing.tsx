@@ -17,7 +17,7 @@ const plans = [
     cta: "Rejoindre Amplitude",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE ??
-      "https://buy.stripe.com/dRm6oIaJi36h8m84YB2cg03",
+      "https://buy.stripe.com/14A3cweZy9uFgSE0Il2cg07",
     variant: "primary" as const,
   },
   {
@@ -50,7 +50,7 @@ const plans = [
     cta: "Rejoindre Amplitude Max",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
-      "https://buy.stripe.com/bJe9AU04E5ep31Odv72cg06",
+      "https://buy.stripe.com/bJeaEY04E9uF0TGdv72cg08",
     variant: "primary" as const,
   },
 ];

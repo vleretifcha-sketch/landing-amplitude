@@ -10,7 +10,7 @@ const features = [
 
 const stripePaymentLink =
   import.meta.env.VITE_STRIPE_PAYMENT_LINK ??
-  "https://buy.stripe.com/dRm6oIaJi36h8m84YB2cg03";
+  "https://buy.stripe.com/14A3cweZy9uFgSE0Il2cg07";
 
 export function SubscribePage() {
   return (
