@@ -18,7 +18,7 @@ const plans = [
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE ??
       "https://buy.stripe.com/dRm6oIaJi36h8m84YB2cg03",
-    variant: "secondary" as const,
+    variant: "primary" as const,
   },
   {
     id: "pro" as const,
@@ -46,12 +46,12 @@ const plans = [
     compareAt: "998 €",
     discount: "-50 %",
     launchOnly: true,
-    scarcityNote: "Seulement 20 places disponibles",
+    scarcityNote: "Place limitée à 20 personnes pour Amplitude Max",
     cta: "Rejoindre Amplitude Max",
     href:
       import.meta.env.VITE_STRIPE_LINK_AMPLITUDE_MAX ??
       "https://buy.stripe.com/bJe9AU04E5ep31Odv72cg06",
-    variant: "secondary" as const,
+    variant: "primary" as const,
   },
 ];
 
@@ -60,7 +60,7 @@ const comparisonFeatures: {
   included: Record<PlanId, boolean>;
 }[] = [
   {
-    label: "Accès annuel à l'application mobile (iOS)",
+    label: "Accès annuel à l'application mobile",
     included: { amplitude: true, pro: true, max: true },
   },
   {
@@ -96,7 +96,7 @@ const comparisonFeatures: {
     included: { amplitude: false, pro: true, max: true },
   },
   {
-    label: "Accès à vie à l'application mobile (iOS)",
+    label: "Accès à vie à l'application mobile",
     included: { amplitude: false, pro: false, max: true },
   },
   {
@@ -112,7 +112,6 @@ const comparisonFeatures: {
 const trustItems = [
   "7 jours satisfait ou remboursé",
   "Paiement sécurisé",
-  "iOS",
 ];
 
 const PROMO_CODE = "LANCEMENT";
@@ -304,6 +303,15 @@ export function Pricing() {
               ; deux formules inédites avec suivi pour celles et ceux qui veulent
               aller plus loin.
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-light sm:text-base">
+              Application disponible sur{" "}
+              <span className="font-medium text-text">iOS</span>
+              {" — "}
+              <span className="font-medium text-gold">
+                Android à venir juillet 2026
+              </span>
+              .
+            </p>
           </div>
         </Reveal>
 
@@ -345,19 +353,27 @@ export function Pricing() {
         </div>
 
         <Reveal delay={360}>
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-light sm:mt-12">
-            {trustItems.map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <span
-                  className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/15 text-[11px] font-bold text-gold"
-                  aria-hidden
-                >
-                  ✓
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-10 space-y-5 sm:mt-12">
+            <p className="text-center text-sm text-muted-light">
+              Disponible sur iOS —{" "}
+              <span className="font-medium text-gold">
+                Android à venir juillet 2026
+              </span>
+            </p>
+            <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-light">
+              {trustItems.map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span
+                    className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/15 text-[11px] font-bold text-gold"
+                    aria-hidden
+                  >
+                    ✓
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </section>
